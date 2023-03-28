@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/HayatsCodes/task-manager-api/issues"
   },
-  "homepage": "https://github.com/HayatsCodes/task-manager-api#readme"
+  "homepage": "https://github.com/HayatsCodes/task-manager-api#readme",
+  "devDependencies": {
+    "supertest": "^6.3.3"
+  }
 }
