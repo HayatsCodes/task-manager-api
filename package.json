@@ -20,5 +20,9 @@
   "devDependencies": {
     "jest": "^29.5.0",
     "supertest": "^6.3.3"
+  },
+  "dependencies": {
+    "mongoose": "^7.0.3",
+    "morgan": "^1.10.0"
   }
 }
