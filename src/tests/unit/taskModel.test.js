@@ -65,7 +65,9 @@ describe('Task Model', () => {
         });
     });
 
-    // describe('reject task with missing required fields')
+    describe('reject task with missing required fields', () => {
+        
+    })
 });
 
 // @Todo:
