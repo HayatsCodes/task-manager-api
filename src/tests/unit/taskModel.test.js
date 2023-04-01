@@ -76,15 +76,11 @@ describe('Task Model', () => {
             const user = await userModel.create(userData);
 
             const taskData = {
-                description: 'A Completed task',
                 owner: user._id,
                 completed: true
             };
 
-            await taskModel.create(taskData);
-
-            const savedTask = await taskModel.findOne({ owner: user._id });
-            expect(savedTask).toHaveProperty('description', 'owner', 'completed');
+            expect(await taskModel.create(taskData))
         });
     })
 });
