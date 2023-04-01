@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const userModel = require('../../models/userModel');
 const { MongoMemoryServer } = require('mongodb-memory-server');
+const userModel = require('../../models/userModel');
 
 describe('userModel', () => {
     let mongo;
