@@ -12,6 +12,7 @@ const mockgoose = new Mockgoose(mongoose);
 describe('Save user', () => {
     beforeAll(async () => {
         await mockgoose.prepareStorage();
+        await 
     })
     test('Should save a new user', () => {
 
