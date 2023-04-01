@@ -82,4 +82,6 @@ describe('userModel', () => {
               await expect(userModel.create(userData2)).rejects.toThrow();
         });
     });
+
+    describe
 });
