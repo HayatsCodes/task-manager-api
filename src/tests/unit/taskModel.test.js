@@ -6,7 +6,11 @@ describe('Task Model', () => {
     let mongo;
 
     beforeAll( async () => {
-        
+        mongo = await MongoMemoryServer.create();
+        const uri = mongo.getUri();
+        await mongoose.connect(uri, {
+            
+        })
     })
 });
 
