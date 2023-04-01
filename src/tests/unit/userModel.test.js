@@ -22,6 +22,10 @@ describe('Save user', () => {
     afterEach(async () => {
         await mockgoose.helper.reset();
     });
+
+    afterAll(async () => {
+        await mongoose.disconnect();
+    });
     
     test('Should save a new user', () => {
 
