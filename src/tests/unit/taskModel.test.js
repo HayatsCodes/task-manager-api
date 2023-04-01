@@ -6,12 +6,6 @@ const userModel = require('../../models/userModel');
 
 describe('Task Model', () => {
     let mongo;
-    const userData = {
-        firstName: 'John',
-        lastName: 'Doe',
-        email: 'johndoe@example.com',
-        password: 'password123',
-    };
 
     beforeAll( async () => {
         mongo = await MongoMemoryServer.create();
@@ -29,6 +23,12 @@ describe('Task Model', () => {
 
     describe('Save task', () => {
         test('Should save a new task to the database', async () => {
+            const userData = {
+                firstName: 'John',
+                lastName: 'Doe',
+                email: 'johndoe@example.com',
+                password: 'password123',
+            };
 
             const user = await userModel.create(userData);
 
@@ -42,6 +42,7 @@ describe('Task Model', () => {
             const savedTask = await taskModel.findOne({ owner: user._id });
             expect(savedTask).toHaveProperty('description', 'owner', 'completed');
         });
+        
     });
 
     describe('reject task with missing required fields')
