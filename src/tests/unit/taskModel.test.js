@@ -3,7 +3,11 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 const taskModel = require('../../models/taskModel');
 
 describe('Task Model', () => {
-    beforeAll( ())
+    let mongo;
+
+    beforeAll( async () => {
+        
+    })
 });
 
 // @Todo:
