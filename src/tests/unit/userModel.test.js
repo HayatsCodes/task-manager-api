@@ -27,7 +27,7 @@ describe('Save user', () => {
         await mongoose.disconnect();
     });
 
-    test('Should save a new user', () => {
+    test('Should save a new user', async () => {
         const userData = {
             firstName: 'John',
             lastName: 'Doe',
@@ -35,5 +35,7 @@ describe('Save user', () => {
             password: 'password123'
         };
         const newUser = new userModel(userData)
+
+        await newUser.save();
     });
 });
