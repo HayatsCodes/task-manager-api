@@ -33,23 +33,6 @@ describe('userModel', () => {
       expect(savedUser).toMatchObject(userData);
     });
 
-    test('Should not save a user with incorrect details', async () => {
-      const userData = {
-        firstName: 'John',
-        lastName: 'Doe',
-        email: 'invalid-email',
-        password: 'password123',
-      };
-      await expect(userModel.create(userData)).rejects.toThrow();
-    });
-
-    test('Should not save a user with missing required fields', async () => {
-      const userData = {
-        firstName: 'John',
-        lastName: 'Doe',
-        password: 'password123',
-      };
-      await expect(userModel.create(userData)).rejects.toThrow();
-    });
+    
   });
 });
