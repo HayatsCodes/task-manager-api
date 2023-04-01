@@ -35,6 +35,7 @@ describe('userModel', () => {
     });
 
     describe('Reject incorrect details', () => {
+
         test('Should reject an incorrect email', async () => {
             const userData = {
                 firstName: 'John',
@@ -44,6 +45,7 @@ describe('userModel', () => {
             };
             await expect(userModel.create(userData)).rejects.toThrow();
         });
+
         test('Should reject First Name or Last Name shorter than 2 characters', async () => {
             const userData = {
                 firstName: 'J',
@@ -62,6 +64,6 @@ describe('userModel', () => {
               await expect(userModel.create(userData2)).rejects.toThrow();
         });
 
-        
+        test('Should ')
     });
 });
