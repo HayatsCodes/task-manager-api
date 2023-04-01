@@ -26,8 +26,12 @@ describe('Save user', () => {
     afterAll(async () => {
         await mongoose.disconnect();
     });
-    
-    test('Should save a new user', () => {
 
+    test('Should save a new user', () => {
+        const taskData = {
+            description: 'Do the laundry',
+            completed: false,
+            owner: mongoose
+        }
     });
 });
