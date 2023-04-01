@@ -42,6 +42,7 @@ describe('userModel', () => {
                 email: 'johndoeexample',
                 password: 'password123',
             };
-        })
+            await expect(userModel.create(userData)).rejects.toThrow();
+        });
     })
 });
