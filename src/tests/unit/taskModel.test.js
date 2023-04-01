@@ -93,7 +93,7 @@ describe('Task Model', () => {
             const user = await userModel.create(userData);
 
             const taskData = {
-                description: 'A  task',
+                description: 'An unknown owner',
                 completed: true
             };
 
