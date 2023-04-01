@@ -42,7 +42,10 @@ describe('Task Model', () => {
             const savedTask = await taskModel.findOne({ owner: user._id });
             expect(savedTask).toHaveProperty('description', 'owner', 'completed');
         });
-        
+ 
+        test('Should save a completed task', () => {
+            
+        })
     });
 
     describe('reject task with missing required fields')
