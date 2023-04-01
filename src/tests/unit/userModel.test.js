@@ -33,4 +33,5 @@ describe('userModel', () => {
             expect(savedUser).toMatchObject(userData);
         });
     });
+    
 });
