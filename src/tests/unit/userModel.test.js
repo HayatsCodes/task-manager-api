@@ -83,5 +83,5 @@ describe('userModel', () => {
         });
     });
 
-    describe
+    describe('')
 });
