@@ -43,8 +43,13 @@ describe('Task Model', () => {
             expect(savedTask).toHaveProperty('description', 'owner', 'completed');
         });
  
-        test('Should save a completed task', () => {
-            
+        test('Should save a completed task', async () => {
+            const userData = {
+                firstName: 'Jane',
+                lastName: 'Doe',
+                email: 'johndoe@example.com',
+                password: 'password123',
+            };
         })
     });
 
