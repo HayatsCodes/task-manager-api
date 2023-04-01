@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const userModel = require('../../models/userModel');
 const { MongoMemoryServer } = require('mongod-memory-server');
-const mongod = new MongoMemoryServer();
+const mongod = await MongoMemoryServer.create();
 
 // @Todo:
 // Save a new user
