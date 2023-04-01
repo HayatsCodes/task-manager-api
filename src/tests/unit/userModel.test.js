@@ -15,17 +15,14 @@ describe('Save user', () => {
         const uri = await mongodb.getConnectionString();
         await mongoose.connect(uri, {
             useNewUrlParser: true,
-            useCreateIndex: true,
             useUnifiedTopology: true
         });
     });
 
-    afterEach(async () => {
-        await mockgoose.helper.reset();
-    });
 
     afterAll(async () => {
         await mongoose.disconnect();
+        await mongodb.stop();
     });
 
     test('Should save a new user', async () => {
