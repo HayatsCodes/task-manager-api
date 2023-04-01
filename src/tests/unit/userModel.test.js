@@ -82,6 +82,10 @@ describe('userModel', () => {
               await expect(userModel.create(userData2)).rejects.toThrow();
         });
 
+        
+    });
+
+    describe('Reject user with missing required fields', () => {
         test('Should not save a user with missing required fields', async () => {
             const userData = {
               firstName: 'John',
@@ -90,7 +94,5 @@ describe('userModel', () => {
             };
             await expect(userModel.create(userData)).rejects.toThrow();
           });
-    });
-
-    describe('')
+    })
 });
