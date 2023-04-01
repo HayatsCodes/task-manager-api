@@ -10,3 +10,6 @@ mongoose.connection.on('error', (err) => {
     console.log(err);
 });
 
+async function mongoConnect() {
+    
+}
