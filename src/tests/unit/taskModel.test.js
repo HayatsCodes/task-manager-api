@@ -12,12 +12,14 @@ describe('Task Model', () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-    })
+    });
 
     afterAll( async () => {
         await mongoose.disconnect();
         await mongo.stop();
-    })
+    });
+
+    describe('Save task')
 });
 
 // @Todo:
