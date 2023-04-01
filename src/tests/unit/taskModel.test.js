@@ -47,10 +47,11 @@ describe('Task Model', () => {
             const userData = {
                 firstName: 'Jane',
                 lastName: 'Doe',
-                email: 'johndoe@example.com',
+                email: 'janedoe@example.com',
                 password: 'password123',
             };
-        })
+            
+        });
     });
 
     describe('reject task with missing required fields')
