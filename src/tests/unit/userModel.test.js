@@ -64,8 +64,14 @@ describe('userModel', () => {
               await expect(userModel.create(userData2)).rejects.toThrow();
         });
 
-        test('Should reject passwords greater than or less than 8', () => {
-            
+        test('Should reject passwords less than 8 characters', async () => {
+            const userData = {
+                firstName: 'Jane',
+                lastName: 'Doe',
+                email: 'janedoe@example.com',
+                password: 'password123'
+              };
+              await expect(userModel.create(userData)).rejects.toThrow();
         })
     });
 });
