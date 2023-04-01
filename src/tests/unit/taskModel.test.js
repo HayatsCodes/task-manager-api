@@ -37,7 +37,8 @@ describe('Task Model', () => {
                 owner: user._id
             };
 
-            const savedTask = await taskModel.findOne({ owner: user._ });
+            const savedTask = await taskModel.findOne({ owner: user._id });
+            expect()
         });
     })
 });
