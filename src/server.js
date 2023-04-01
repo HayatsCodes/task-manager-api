@@ -3,4 +3,8 @@ const app = require('./app');
 
 const server = http.createServer(app);
 
-async function
+async function startServer() {
+    server.listen(4040, () => {
+        
+    })
+}
