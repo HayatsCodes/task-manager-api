@@ -25,7 +25,7 @@ describe('Save user', () => {
         await mongodb.stop();
     });
 
-    test('Should save a new user', async () => {
+    test('Should save a new user to the database', async () => {
         const userData = {
             firstName: 'John',
             lastName: 'Doe',
