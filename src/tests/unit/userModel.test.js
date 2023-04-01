@@ -92,6 +92,25 @@ describe('userModel', () => {
               lastName: 'Doe',
               password: 'password123',
             };
+            
+            await expect(userModel.create(userData)).rejects.toThrow();
+            const userData = {
+              firstName: 'John',
+              lastName: 'Doe',
+              password: 'password123',
+            };
+            await expect(userModel.create(userData)).rejects.toThrow();
+            const userData = {
+              firstName: 'John',
+              lastName: 'Doe',
+              password: 'password123',
+            };
+            await expect(userModel.create(userData)).rejects.toThrow();
+            const userData = {
+              firstName: 'John',
+              lastName: 'Doe',
+              password: 'password123',
+            };
             await expect(userModel.create(userData)).rejects.toThrow();
           });
     })
