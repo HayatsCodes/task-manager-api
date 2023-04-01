@@ -32,12 +32,12 @@ describe('Task Model', () => {
 
             const user = await userModel.create(userData);
 
-            const task = {
+            const taskData = {
                 description: 'A new task',
                 owner: user._id
             };
 
-            const task = 
+            await taskModel.create(taskData);
 
             const savedTask = await taskModel.findOne({ owner: user._id });
             console.log('saved task: ', savedTask);
