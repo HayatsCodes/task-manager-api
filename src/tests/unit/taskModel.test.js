@@ -82,10 +82,10 @@ describe('Task Model', () => {
 
             await expect(taskModel.create(taskData)).rejects.toThrow();
         });
-        
-        test('should reject task with no description field', async () => {
+
+        test('should reject task with no owner field', async () => {
             const userData = {
-                firstName: 'Jack',
+                firstName: 'Alisa',
                 lastName: 'Dee',
                 email: 'jackdee@example.com',
                 password: 'password123',
