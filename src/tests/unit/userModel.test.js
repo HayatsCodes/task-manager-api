@@ -31,10 +31,12 @@ describe('Save user', () => {
         const userData = {
             firstName: 'John',
             lastName: 'Doe',
-            email: 'johndoe@gmail.com',
+            email: 'johndoe@example.com',
             password: 'password123'
         };
-        const newUser = new userModel(userData)
+        const newUser = new userModel(userData);
         await newUser.save();
+
+        const savedUser = await userModel.findOne({email: 'johndoe@example.com'})
     });
 });
