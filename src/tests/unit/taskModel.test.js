@@ -12,7 +12,7 @@ describe('Task Model', () => {
         email: 'johndoe@example.com',
         password: 'password123',
     };
-    
+
     beforeAll( async () => {
         mongo = await MongoMemoryServer.create();
         const uri = mongo.getUri();
@@ -42,7 +42,9 @@ describe('Task Model', () => {
             const savedTask = await taskModel.findOne({ owner: user._id });
             expect(savedTask).toHaveProperty('description', 'owner', 'completed');
         });
-    })
+    });
+
+    describe('')
 });
 
 // @Todo:
