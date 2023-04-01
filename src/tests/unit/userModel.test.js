@@ -35,7 +35,6 @@ describe('Save user', () => {
             password: 'password123'
         };
         const newUser = new userModel(userData)
-
         await newUser.save();
     });
 });
