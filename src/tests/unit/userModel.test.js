@@ -19,7 +19,10 @@ describe('Save user', () => {
         });
     });
 
-    after
+    afterEach(async () => {
+        await mockgoose.helper.reset();
+    });
+    
     test('Should save a new user', () => {
 
     });
