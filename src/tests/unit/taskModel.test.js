@@ -38,6 +38,7 @@ describe('Task Model', () => {
             };
 
             const savedTask = await taskModel.findOne({ owner: user._id });
+            console.log('saved task: ', savedTask);
             expect(savedTask).toHaveProperty('description', 'owner', 'completed');
         });
     })
