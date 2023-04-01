@@ -7,9 +7,10 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 // check for incorrect details : name, email, password
 // check for required field
 
-describe('Save user', () => {
+describe('Save user', async () => {
+
+    const mongo = await MongoMemoryServer.create();
     beforeAll(async () => {
-        const mongo = await MongoMemoryServer.create();
         const uri = mongo.getUri()
         await mongoose.connect(uri, {
             useNewUrlParser: true,
