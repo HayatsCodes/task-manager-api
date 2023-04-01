@@ -50,7 +50,13 @@ describe('Task Model', () => {
                 email: 'janedoe@example.com',
                 password: 'password123',
             };
-            
+            const user = await userModel.create(userData);
+
+            const taskData = {
+                description: 'A Completed task',
+                owner: user._id
+                completed
+            }
         });
     });
 
