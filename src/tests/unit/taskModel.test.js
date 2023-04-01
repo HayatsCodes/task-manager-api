@@ -69,8 +69,25 @@ describe('Task Model', () => {
         test('should reject task with no description field', async () => {
             const userData = {
                 firstName: 'Jack',
-                lastName: 'Doe',
-                email: 'janedoe@example.com',
+                lastName: 'Dee',
+                email: 'jackdee@example.com',
+                password: 'password123',
+            };
+            const user = await userModel.create(userData);
+
+            const taskData = {
+                owner: user._id,
+                completed: true
+            };
+
+            await expect(taskModel.create(taskData)).rejects.toThrow();
+        });
+        
+        test('should reject task with no description field', async () => {
+            const userData = {
+                firstName: 'Jack',
+                lastName: 'Dee',
+                email: 'jackdee@example.com',
                 password: 'password123',
             };
             const user = await userModel.create(userData);
