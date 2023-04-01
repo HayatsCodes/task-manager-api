@@ -23,12 +23,7 @@ describe('Task Model', () => {
 
     describe('Save task', () => {
         test('Should save a new task to the database', async () => {
-            const userData = {
-                firstName: 'John',
-                lastName: 'Doe',
-                email: 'johndoe@example.com',
-                password: 'password123',
-            };
+            
 
             const user = await userModel.create(userData);
 
