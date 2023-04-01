@@ -107,11 +107,12 @@ describe('userModel', () => {
             // last name missing
             const userData3 = {
               firstName: 'John',
-              lastName: 'Doe',
+              email: 'johndoe@example.com',
               password: 'password123',
             };
             await expect(userModel.create(userData3)).rejects.toThrow();
 
+            // first name missing
             const userData4 = {
               firstName: 'John',
               lastName: 'Doe',
