@@ -36,7 +36,12 @@ describe('userModel', () => {
 
     describe('Reject incorrect details', () => {
         test('Should reject an incorrect email', async () => {
-            
+            const userData = {
+                firstName: 'John',
+                lastName: 'Doe',
+                email: 'johndoeexample.com',
+                password: 'password123',
+            };
         })
     })
 });
