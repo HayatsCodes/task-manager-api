@@ -114,8 +114,8 @@ describe('userModel', () => {
 
             // first name missing
             const userData4 = {
-              firstName: 'John',
               lastName: 'Doe',
+              email: 'johndoe@example.com',
               password: 'password123',
             };
             await expect(userModel.create(userData4)).rejects.toThrow();
