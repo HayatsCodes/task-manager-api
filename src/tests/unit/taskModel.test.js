@@ -66,7 +66,9 @@ describe('Task Model', () => {
     });
 
     describe('reject task with missing required fields', () => {
-        test('should reject missing description field', ())
+        test('should reject task with no description field', () => {
+
+        });
     })
 });
 
