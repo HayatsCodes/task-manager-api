@@ -87,6 +87,8 @@ describe('userModel', () => {
 
     describe('Reject user with missing required fields', () => {
         test('Should not save a user with missing required fields', async () => {
+
+            // email missing
             const userData = {
               firstName: 'John',
               lastName: 'Doe',
@@ -94,6 +96,7 @@ describe('userModel', () => {
             };
             await expect(userModel.create(userData)).rejects.toThrow();
 
+            // password missing
             const userData2 = {
               firstName: 'John',
               lastName: 'Doe',
@@ -101,6 +104,7 @@ describe('userModel', () => {
             };
             await expect(userModel.create(userData2)).rejects.toThrow();
 
+            // last name missing
             const userData3 = {
               firstName: 'John',
               lastName: 'Doe',
