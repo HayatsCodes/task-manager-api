@@ -61,6 +61,6 @@ describe('userModel', () => {
               };
               await expect(userModel.create(userData2)).rejects.toThrow();
         };
-        test()
+        test('Should reject passwor less than 8 cha')
     });
 });
