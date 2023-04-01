@@ -29,7 +29,9 @@ describe('Task Model', () => {
                 email: 'johndoe@example.com',
                 password: 'password123',
             };
-            await userModel.create(userData);
+
+            const user = await userModel.create(userData);
+
             const task = {
                 description: 'A new task',
                 owner: 
