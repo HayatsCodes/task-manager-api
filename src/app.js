@@ -1,5 +1,7 @@
 const express = require('express');
-const morgan = require('morgan');
 const app = express();
+const morgan = require('morgan');
+
+app.use(morgan('combined'));
 
 module.exports = app;
