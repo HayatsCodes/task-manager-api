@@ -33,5 +33,6 @@ describe('userModel', () => {
             expect(savedUser).toMatchObject(userData);
         });
     });
-    
+
+    describe('Reject incorrect details')
 });
