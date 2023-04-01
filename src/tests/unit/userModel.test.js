@@ -12,8 +12,14 @@ const mockgoose = new Mockgoose(mongoose);
 describe('Save user', () => {
     beforeAll(async () => {
         await mockgoose.prepareStorage();
-        await 
-    })
+        await mongoose.connect('mongodb://localhost/TestingDB', {
+            useNewUrlParser: true,
+            useCreateIndex: true,
+            useUnifiedTopology: true
+        });
+    });
+
+    after
     test('Should save a new user', () => {
 
     });
