@@ -9,8 +9,14 @@ describe('Task Model', () => {
         mongo = await MongoMemoryServer.create();
         const uri = mongo.getUri();
         await mongoose.connect(uri, {
-            
-        })
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+    })
+
+    afterAll( async () => {
+        await mongoose.disconnect();
+        await mongo.stop();
     })
 });
 
