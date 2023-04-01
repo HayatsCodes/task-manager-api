@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const userModel = require('../../models/userModel');
 const { MongoMemoryServer } = require('mongodb-memory-server');
-const mongo = await MongoMemoryServer.create();
 
 // @Todo:
 // Save a new user
@@ -10,6 +9,7 @@ const mongo = await MongoMemoryServer.create();
 
 describe('Save user', () => {
     beforeAll(async () => {
+        const mongo = await MongoMemoryServer.create();
         const uri = mongo.getUri()
         await mongoose.connect(uri, {
             useNewUrlParser: true,
