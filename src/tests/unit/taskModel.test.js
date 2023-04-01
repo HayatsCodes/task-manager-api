@@ -19,7 +19,11 @@ describe('Task Model', () => {
         await mongo.stop();
     });
 
-    describe('Save task')
+    describe('Save task', () => {
+        test('Should save a new task to the database', async () => {
+            const 
+        });
+    })
 });
 
 // @Todo:
