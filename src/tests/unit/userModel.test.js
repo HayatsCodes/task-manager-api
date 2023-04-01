@@ -3,7 +3,7 @@ const userModel = require('../../models/userModel');
 const Mockgoose = require('mockgoose').Mockgoose;
 
 const { MongoMemoryServer } = require('mongodb-memory-server');
-
+const mongodb = new MongoMemoryServer();
 
 // @Todo:
 // Save a new user
@@ -12,7 +12,7 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 
 describe('Save user', () => {
     beforeAll(async () => {
-        await mockgoose.prepareStorage();
+        const uri = await mongodb
         await mongoose.connect('mongodb://localhost/TestingDB', {
             useNewUrlParser: true,
             useCreateIndex: true,
