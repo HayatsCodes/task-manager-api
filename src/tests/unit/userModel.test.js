@@ -28,10 +28,10 @@ describe('Save user', () => {
     });
 
     test('Should save a new user', () => {
-        const taskData = {
-            description: 'Do the laundry',
-            completed: false,
-            owner: mongoose
-        }
+        const userData = {
+            name: 'John Doe',
+            email: 'invalid-email',
+            password: 'password123'
+        };
     });
 });
