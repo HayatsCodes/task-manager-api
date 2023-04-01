@@ -11,6 +11,6 @@ const mockgoose = new Mockgoose(mongoose);
 
 describe('Save user', () => {
     test('Should save a new user', () => {
-        
-    })
+
+    });
 });
