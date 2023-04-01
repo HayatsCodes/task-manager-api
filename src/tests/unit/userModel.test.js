@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const userModel = require('../../models/')
+const userModel = require('../../models/userModel');
+
 
 // @Todo:
 // Save a new user
