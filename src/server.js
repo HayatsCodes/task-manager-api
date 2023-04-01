@@ -3,8 +3,10 @@ const app = require('./app');
 
 const server = http.createServer(app);
 
-async function startServer() {
+function startServer() {
     server.listen(4040, () => {
-        
-    })
+        console.log('Listening on port 4040');
+    });
 }
+
+startServer();
