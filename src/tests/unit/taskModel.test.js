@@ -68,7 +68,7 @@ describe('Task Model', () => {
     describe('reject task with missing required fields', () => {
         test('should reject task with no description field', async () => {
             const userData = {
-                firstName: 'Jane',
+                firstName: 'Jack',
                 lastName: 'Doe',
                 email: 'janedoe@example.com',
                 password: 'password123',
