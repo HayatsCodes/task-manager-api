@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const userModel = require('../../models/userModel');
-const { MongoMemoryServer } = require('mongodb-memory-server');
-const mongodb = new MongoMemoryServer();
+const { MongoMemoryServer } = require('mongod-memory-server');
+const mongod = new MongoMemoryServer();
 
 // @Todo:
 // Save a new user
@@ -10,7 +10,7 @@ const mongodb = new MongoMemoryServer();
 
 describe('Save user', () => {
     beforeAll(async () => {
-        const uri = await mongodb.getUri()
+        const uri = await mongod.getUri()
         await mongoose.connect(uri, {
             useNewUrlParser: true,
             useUnifiedTopology: true
@@ -20,7 +20,7 @@ describe('Save user', () => {
 
     afterAll(async () => {
         await mongoose.disconnect();
-        await mongodb.stop();
+        await mongod.stop();
     });
 
     test('Should save a new user to the database', async () => {
