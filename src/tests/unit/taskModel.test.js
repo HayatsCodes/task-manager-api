@@ -86,14 +86,14 @@ describe('Task Model', () => {
         test('should reject task with no owner field', async () => {
             const userData = {
                 firstName: 'Alisa',
-                lastName: 'Dee',
-                email: 'jackdee@example.com',
+                lastName: 'Kim',
+                email: 'alisakim@example.com',
                 password: 'password123',
             };
             const user = await userModel.create(userData);
 
             const taskData = {
-                owner: user._id,
+                description: 'A  task',
                 completed: true
             };
 
