@@ -10,5 +10,7 @@ const mockgoose = new Mockgoose(mongoose);
 // check for required field
 
 describe('Save user', () => {
-
+    test('Should save a new user', () => {
+        
+    })
 });
