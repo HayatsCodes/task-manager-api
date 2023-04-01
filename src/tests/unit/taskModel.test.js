@@ -34,8 +34,8 @@ describe('Task Model', () => {
 
             const task = {
                 description: 'A new task',
-                owner: 
-            }
+                owner: user._id
+            };
         });
     })
 });
