@@ -45,7 +45,21 @@ describe('userModel', () => {
             await expect(userModel.create(userData)).rejects.toThrow();
         });
         test('Should reject First Name or Last Name shorter than 2 characters') {
-            
+            const userData = {
+                firstName: 'J',
+                lastName: 'Doe',
+                email: 'johndoe@example.com',
+                password: 'password123'
+              };
+              await expect(userModel.create(userData)).rejects.toThrow();
+              
+              const userData2 = {
+                firstName: 'John',
+                lastName: 'D',
+                email: 'johndoe@example.com',
+                password: 'password123'
+              };
+              await expect(userModel.create(userData2)).rejects.toThrow();
         }
     })
 });
