@@ -44,6 +44,6 @@ describe('userModel', () => {
             };
             await expect(userModel.create(userData)).rejects.toThrow();
         });
-        
+        test('Should reject First name and last name shorter than 2 letter')
     })
 });
