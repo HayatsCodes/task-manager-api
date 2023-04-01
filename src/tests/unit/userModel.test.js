@@ -75,12 +75,21 @@ describe('userModel', () => {
 
               const userData2 = {
                 firstName: 'John',
-                lastName: 'D',
+                lastName: 'Doe',
                 email: 'johndoe@example.com',
                 password: 'password12345678'
               };
               await expect(userModel.create(userData2)).rejects.toThrow();
         });
+
+        test('Should not save a user with missing required fields', async () => {
+            const userData = {
+              firstName: 'John',
+              lastName: 'Doe',
+              password: 'password123',
+            };
+            await expect(userModel.create(userData)).rejects.toThrow();
+          });
     });
 
     describe('')
