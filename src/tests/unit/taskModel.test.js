@@ -80,9 +80,9 @@ describe('Task Model', () => {
                 completed: true
             };
 
-            expect(await taskModel.create(taskData))
+            await expect(taskModel.create(taskData)).rejects.toThrow();
         });
-    })
+    });
 });
 
 // @Todo:
