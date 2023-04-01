@@ -60,6 +60,7 @@ describe('userModel', () => {
                 password: 'password123'
               };
               await expect(userModel.create(userData2)).rejects.toThrow();
-        }
-    })
+        };
+        test()
+    });
 });
