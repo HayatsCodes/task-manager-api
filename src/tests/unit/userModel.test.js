@@ -35,6 +35,8 @@ describe('userModel', () => {
     });
 
     describe('Reject incorrect details', () => {
-        tes
+        test('Should reject an incorrect email', async () => {
+            
+        })
     })
 });
