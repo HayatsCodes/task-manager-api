@@ -54,13 +54,18 @@ describe('Task Model', () => {
 
             const taskData = {
                 description: 'A Completed task',
-                owner: user._id
-                completed
-            }
+                owner: user._id,
+                completed: true
+            };
+
+            await taskModel.create(taskData);
+
+            const savedTask = await taskModel.findOne({ owner: user._id });
+            expect(savedTask).toHaveProperty('description', 'owner', 'completed');
         });
     });
 
-    describe('reject task with missing required fields')
+    // describe('reject task with missing required fields')
 });
 
 // @Todo:
