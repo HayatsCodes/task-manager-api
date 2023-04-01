@@ -29,8 +29,9 @@ describe('Save user', () => {
 
     test('Should save a new user', () => {
         const userData = {
-            name: 'John Doe',
-            email: 'invalid-email',
+            firstName: 'John',
+            lastName: 'Doe',
+            email: 'johndoe@gmail.com',
             password: 'password123'
         };
         const newUser = new userModel(userData)
