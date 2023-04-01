@@ -39,7 +39,7 @@ describe('userModel', () => {
             const userData = {
                 firstName: 'John',
                 lastName: 'Doe',
-                email: 'johndoeexample.com',
+                email: 'johndoeexample',
                 password: 'password123',
             };
         })
