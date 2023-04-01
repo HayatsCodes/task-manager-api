@@ -33,5 +33,6 @@ describe('Save user', () => {
             email: 'invalid-email',
             password: 'password123'
         };
+        const newUser = new userModel(userData)
     });
 });
