@@ -1,4 +1,4 @@
 // @Todo:
 // Save a new user
-// check for incorrect values : name, email
-// 
+// check for incorrect details : name, email, password
+// check for i
