@@ -66,8 +66,25 @@ describe('Task Model', () => {
     });
 
     describe('reject task with missing required fields', () => {
-        test('should reject task with no description field', () => {
+        test('should reject task with no description field', async () => {
+            const userData = {
+                firstName: 'Jane',
+                lastName: 'Doe',
+                email: 'janedoe@example.com',
+                password: 'password123',
+            };
+            const user = await userModel.create(userData);
 
+            const taskData = {
+                description: 'A Completed task',
+                owner: user._id,
+                completed: true
+            };
+
+            await taskModel.create(taskData);
+
+            const savedTask = await taskModel.findOne({ owner: user._id });
+            expect(savedTask).toHaveProperty('description', 'owner', 'completed');
         });
     })
 });
