@@ -6,7 +6,13 @@ const userModel = require('../../models/userModel');
 
 describe('Task Model', () => {
     let mongo;
-
+    const userData = {
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'johndoe@example.com',
+        password: 'password123',
+    };
+    
     beforeAll( async () => {
         mongo = await MongoMemoryServer.create();
         const uri = mongo.getUri();
@@ -23,7 +29,6 @@ describe('Task Model', () => {
 
     describe('Save task', () => {
         test('Should save a new task to the database', async () => {
-            
 
             const user = await userModel.create(userData);
 
