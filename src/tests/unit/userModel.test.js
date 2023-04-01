@@ -10,6 +10,9 @@ const mockgoose = new Mockgoose(mongoose);
 // check for required field
 
 describe('Save user', () => {
+    beforeAll(async () => {
+        await mockgoose.prepareStorage();
+    })
     test('Should save a new user', () => {
 
     });
