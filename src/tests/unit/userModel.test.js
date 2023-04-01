@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const userModel = require('../../models/userModel');
-const Mockgoose = require('mockgoose').Mockgoose;
-
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const mongodb = new MongoMemoryServer();
 
