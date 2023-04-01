@@ -34,5 +34,7 @@ describe('userModel', () => {
         });
     });
 
-    describe('Reject incorrect details')
+    describe('Reject incorrect details', () => {
+        tes
+    })
 });
