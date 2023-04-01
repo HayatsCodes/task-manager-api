@@ -10,7 +10,7 @@ const mongodb = new MongoMemoryServer();
 
 describe('Save user', () => {
     beforeAll(async () => {
-        const uri = await mongodb.g
+        const uri = await mongodb.getUri()
         await mongoose.connect(uri, {
             useNewUrlParser: true,
             useUnifiedTopology: true
