@@ -9,4 +9,6 @@ const mockgoose = new Mockgoose(mongoose);
 // check for incorrect details : name, email, password
 // check for required field
 
-describe('Save user')
+describe('Save user', () => {
+
+});
