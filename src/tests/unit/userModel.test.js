@@ -64,6 +64,8 @@ describe('userModel', () => {
               await expect(userModel.create(userData2)).rejects.toThrow();
         });
 
-        test('Should ')
+        test('Should reject passwords greater than or less than 8', () => {
+            
+        })
     });
 });
