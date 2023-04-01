@@ -39,5 +39,5 @@ describe('Save user', () => {
 
         const savedUser = await userModel.findOne({email: 'johndoe@example.com'})
         expect(savedUser).toMatchObject(userData);
-    });
+    }, kkk);
 });
