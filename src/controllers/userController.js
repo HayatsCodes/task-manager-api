@@ -43,6 +43,11 @@ async function verifyUser(userEmail, userPassword) {
 }
 
 async function loginUser(req, res) {
+    try {
+
+    } catch (err) {
+        return return res.json({ error: error });
+    }
     const { email, password } = req.body;
     if (!email || !password) {
         return res.json({message: 'Please enter your email and password'});
@@ -54,7 +59,7 @@ async function loginUser(req, res) {
         expiresIn: process.env.JWT_EXPIRE,
     });
 
-    return res.cookie({'token': token}).json()
+    return res.cookie({'token': token}).json({success:true,message:'LoggedIn Successfully'});
     
 
 }
