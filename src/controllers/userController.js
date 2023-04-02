@@ -27,7 +27,7 @@ async function registerUser(req, res) {
             expiresIn: process.env.JWT_EXPIRE
         });c
         return res.status(201).cookie({'token': token}).json({success: true, message: 'User registered successfully', data: user})
-    } catch (err) {
+    } catch (error) {
         return res.json({ error: error });
     }
 }
