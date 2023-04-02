@@ -59,7 +59,7 @@ async function loginUser(req, res) {
         
     } catch (error) {
         return res.json({ error });
-    }
+    };
    
 
 }
