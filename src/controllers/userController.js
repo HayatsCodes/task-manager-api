@@ -4,7 +4,9 @@ const userModel = require('../models/userModel');
 
 async function adminGetUser(req, res) {
     try {
-        
+
+    } catch (error) {
+        return res.json({ error });
     }
 }
 
