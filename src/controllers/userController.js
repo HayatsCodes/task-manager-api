@@ -50,7 +50,9 @@ async function loginUser(req, res) {
 
     const userId = verifyUser(email, password);
 
-    const token = await jwt.sign({id: })
+    const token = await jwt.sign({id: userId}, process.env.SECRET_KEY, {
+        expiresIn: process.env.JWT_EXPIRE,
+    });
     
 
 }
