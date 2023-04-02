@@ -25,3 +25,5 @@ async function authMiddleware (req, res, next) {
         return res.json({ error });
     }
 }
+
+module.exports = authMiddleware;
