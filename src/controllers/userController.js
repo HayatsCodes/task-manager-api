@@ -25,8 +25,8 @@ async function registerUser(req, res) {
 
         const token = await jwt.sign({ id: user._id }, process.env.SECRET_KEY, {
             expiresIn: process.env.JWT_EXPIRE
-        });
-        
+        });c
+        return res.cookie
     } catch (err) {
         return res.json({ error: error });
     }
