@@ -40,7 +40,7 @@ async function verifyUser(userEmail, userPassword) {
     if (!userExist && !isPasswordMatched) {
         return res.json({message: 'Incorrect email or password'});
     }
-    return userExist._id;
+    return userExist._id; 
 }
 
 async function loginUser(req, res) {
