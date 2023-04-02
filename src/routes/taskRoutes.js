@@ -2,6 +2,7 @@ const express = require('express');
 
 const taskRouter = express.Router();
 
-taskRouter.post('/tasks')
+taskRouter.post('/tasks', addTask);
 taskRouter.get('/tasks', getTasks);
 taskRouter.get('/tasks/:id', getTask);
+taskRouter.patch('/tasks/:id', )
