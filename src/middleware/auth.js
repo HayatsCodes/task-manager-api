@@ -18,6 +18,8 @@ async function authMiddleware (req, res, next) {
 
         req.token = token;
         req.user = user;
+
+        next();
         
     } catch (error) {
         return res.json({ error });
