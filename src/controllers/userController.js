@@ -32,11 +32,11 @@ async function registerUser(req, res) {
     }
 }
 
-function verifyUser(email, password) {
-    
+async function verifyUser(email, password) {
+    const userExist = userModel.findOne()
 }
 
-async function loginUser() {
+async function loginUser(req, res) {
     const { email, password } = req.body;
     if (!email || !password) {
         return res.json({message: 'Please enter your email and password'});
