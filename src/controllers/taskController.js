@@ -8,7 +8,7 @@ async function addTask(req, res) {
         });
         await task.save();
 
-        res.status(201).json(task);
+        res.status(201).json({ 'task': task} );
     } catch (error) {
         return res.json({ error });
     }
