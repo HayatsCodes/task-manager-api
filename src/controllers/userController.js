@@ -5,7 +5,7 @@ const userModel = require('../models/userModel');
 async function registerUser(req, res) {
     try {
         const { name, email, password} = req.body;
-        console.log()
+        console.log("name: ", name, email, password);
 
         if (!name || !email || !password) {
             return res.json({ message: 'Please enter all the details' });
