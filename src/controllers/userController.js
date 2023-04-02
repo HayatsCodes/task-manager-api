@@ -32,8 +32,8 @@ async function registerUser(req, res) {
     }
 }
 
-async function verifyUser(email, password) {
-    const userExist = userModel.findOne()
+async function verifyUser(userEmail, userPassword) {
+    const userExist = userModel.findOne({ email: user})
 }
 
 async function loginUser(req, res) {
