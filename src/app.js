@@ -6,6 +6,6 @@ const userRouter = require('./routes/userRoutes');
 
 app.use(morgan('combined'));
 app.use(express.json());
-app.use('/user')
+app.use('/user', )
 
 module.exports = app;
