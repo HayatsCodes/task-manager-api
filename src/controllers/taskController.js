@@ -20,6 +20,7 @@ async function getTasks() {
         if (!tasks) {
             return res.json({ message: 'No task found'});
         }
+        return res.json({ 'tasks': task}tasks);
     } catch (error) {
         return res.json({ error });
     }
