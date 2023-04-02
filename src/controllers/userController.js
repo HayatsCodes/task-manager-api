@@ -3,7 +3,9 @@ const bcrypt = require('bcryptjs');
 const userModel = require('../models/userModel');
 
 async function adminGetUser(req, res) {
-    
+    try {
+        
+    }
 }
 
 async function registerUser(req, res) {
