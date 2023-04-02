@@ -6,7 +6,9 @@ async function addTask(req, res) {
             ...req.body,
             owner: req.user._id
         });
-        
+        await task.save();
+
+        res.status(201).json(task);
     } catch (error) {
         return res.json({ error });
     }
