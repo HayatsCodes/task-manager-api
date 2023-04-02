@@ -14,13 +14,21 @@ async function addTask(req, res) {
     }
 }
 
-async function getTasks() {
+async function getTasks(req, res) {
     try {
         const tasks = await taskModel.find();
         if (!tasks) {
             return res.json({ message: 'No task found'});
         }
-        return res.json({ 'tasks': task}tasks);
+        return res.json({ 'tasks': tasks });
+    } catch (error) {
+        return res.json({ error });
+    }
+}
+
+async function getTask() {
+    try {
+        
     } catch (error) {
         return res.json({ error });
     }
