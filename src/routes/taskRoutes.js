@@ -4,4 +4,4 @@ const taskRouter = express.Router();
 
 taskRouter.post('')
 taskRouter.get('/tasks', getTasks);
-taskRouter.get('/task', getTask);
+taskRouter.get('/tasks/:id', getTask);
