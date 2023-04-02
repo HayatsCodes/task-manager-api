@@ -37,6 +37,6 @@ async function loginUser() {
     if (!email || !password) {
         return res.json({message: 'Please enter your email and password'});
     }
-    const 
+    
 
 }
