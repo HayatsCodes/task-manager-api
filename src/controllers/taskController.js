@@ -26,7 +26,7 @@ async function getTasks(req, res) {
     }
 }
 
-async function getTask() {
+async function getTask(req, res) {
     try {
         
     } catch (error) {
