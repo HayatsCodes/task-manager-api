@@ -64,7 +64,7 @@ describe('userModel', () => {
               await expect(userModel.create(userData2)).rejects.toThrow();
         });
 
-        test('Should reject passwords less than 8 and greater than 15 characters', async () => {
+        test('Should reject passwords less than 8 characters', async () => {
             const userData = {
                 firstName: 'Jane',
                 lastName: 'Doe',
