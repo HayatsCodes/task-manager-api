@@ -76,3 +76,9 @@ async function loginUser(req, res) {
     };
    
 }
+
+module.exports = {
+    adminGetUser,
+    registerUser,
+    loginUser
+}
