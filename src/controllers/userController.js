@@ -35,7 +35,8 @@ async function registerUser(req, res) {
 async function loginUser() {
     const { email, password } = req.body;
     if (!email || !password) {
-        return res.json({message: 'Incorrect email or password'});
+        return res.json({message: 'Please enter your email and password'});
     }
-    
+    const 
+
 }
