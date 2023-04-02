@@ -4,7 +4,8 @@ const userModel = require('../models/userModel');
 
 async function adminGetUser(req, res) {
     try {
-
+        const users = await userModel.find();
+        return res.json(users)
     } catch (error) {
         return res.json({ error });
     }
