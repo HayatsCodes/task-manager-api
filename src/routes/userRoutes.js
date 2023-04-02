@@ -2,4 +2,4 @@ const express = require('express');
 
 const app = express();
 
-app.post('/register', )
+app.post('/register', registerUser)
