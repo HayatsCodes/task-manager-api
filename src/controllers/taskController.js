@@ -29,7 +29,13 @@ async function getTasks(req, res) {
 async function getTask(req, res) {
     try {
         const id = +req.params.id
-        
+
+        const task = await taskModel.findOne({ _id: id});
+
+        if(!task) {
+            return res.json({ message: 'No task found'});
+
+        }
     } catch (error) {
         return res.json({ error });
     }
