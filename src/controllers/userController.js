@@ -39,6 +39,7 @@ async function verifyUser(userEmail, userPassword) {
     if (!userExist && !isPasswordMatched) {
         return res.json({message: 'Incorrect email or password'});
     }
+    return 
 }
 
 async function loginUser(req, res) {
@@ -49,7 +50,7 @@ async function loginUser(req, res) {
 
     verifyUser(email, password);
 
-    const token = await jwt.sign()
+    const token = await jwt.sign({id: })
     
 
 }
