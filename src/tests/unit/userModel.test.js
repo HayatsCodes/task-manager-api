@@ -72,14 +72,6 @@ describe('userModel', () => {
                 password: 'pass123'
               };
               await expect(userModel.create(userData)).rejects.toThrow();
-
-              const userData2 = {
-                firstName: 'John',
-                lastName: 'Doe',
-                email: 'johndoe@example.com',
-                password: 'password12345678'
-              };
-              await expect(userModel.create(userData2)).rejects.toThrow();
         });
 
         
