@@ -25,11 +25,6 @@ const userSchema = new mongoose.Schema({
         maxLength: [15, 'Password should be maximum of 15 characters'],
     },
 
-    admin: {
-        type: Boolean,
-        default: false,
-    },
-
     token: {
         type: String,
     }
