@@ -33,9 +33,11 @@ async function getTask(req, res) {
         const task = await taskModel.findOne({ _id: id});
 
         if(!task) {
-            return res.json({ message: 'No task found'});
+            return res.json({ message: 'Task matching id not found'});
 
         }
+        return res.json({ 'task': task });
+
     } catch (error) {
         return res.json({ error });
     }
