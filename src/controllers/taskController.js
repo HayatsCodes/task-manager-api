@@ -13,3 +13,5 @@ async function addTask(req, res) {
         return res.json({ error });
     }
 }
+
+async function getTask()
