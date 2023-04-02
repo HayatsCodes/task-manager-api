@@ -2,19 +2,6 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const userModel = require('../models/userModel');
 
-async function adminGetUser(req, res) {
-    try {
-        const users = await userModel.find();
-        if(!users){
-            return res.json({message:'No user found'})
-        }
-
-        return res.json({user:user});
-    } catch (error) {
-        return res.json({ error });
-    }
-}
-
 async function registerUser(req, res) {
     try {
         const { name, email, password} = req.body;
