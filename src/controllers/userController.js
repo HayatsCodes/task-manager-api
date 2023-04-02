@@ -46,6 +46,10 @@ async function loginUser(req, res) {
     if (!email || !password) {
         return res.json({message: 'Please enter your email and password'});
     }
+
+    verifyUser(email, password);
+
+    const token = await jwt.sign()
     
 
 }
