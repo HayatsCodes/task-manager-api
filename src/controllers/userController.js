@@ -31,3 +31,7 @@ async function registerUser(req, res) {
         return res.json({ error: error });
     }
 }
+
+async function loginUser() {
+    
+}
