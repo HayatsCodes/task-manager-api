@@ -32,6 +32,7 @@ async function registerUser(req, res) {
     }
 }
 
+// 
 async function verifyUser(userEmail, userPassword) {
     const userExist = userModel.findOne({ email: userEmail});
     const isPasswordMatched = await bcrypt.compare(userPassword, userExist.password)
