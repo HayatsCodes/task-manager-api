@@ -7,8 +7,9 @@ async function authMiddleware (req, res, next) {
 
         if(!token) {
         return res.json({ message: 'Authentication failed' });
-
         }
+
+        
     } catch (error) {
         return res.json({ error });
     }
