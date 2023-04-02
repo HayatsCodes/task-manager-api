@@ -28,7 +28,8 @@ async function getTasks(req, res) {
 
 async function getTask(req, res) {
     try {
-        const { id } = +req.params
+        const id = +req.params.id
+        
     } catch (error) {
         return res.json({ error });
     }
