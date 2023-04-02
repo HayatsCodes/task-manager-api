@@ -1,3 +1,3 @@
-async function isAuthenticated(req, res, nest) {
+async function authMiddleware (req, res, nest) {
 
 }
