@@ -3,6 +3,6 @@ const { adminGetUser, registerUser, loginUser } = require('../controllers/userCo
 
 const userRouter = express.Router();
 
-userRouter.get('/admin/user', adminGetUser);
+userRouter.get('/admin/users', adminGetUser);
 userRouter.post('/auth/register', registerUser);
 userRouter.post('/auth/login', loginUser);
