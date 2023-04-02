@@ -14,4 +14,10 @@ async function addTask(req, res) {
     }
 }
 
-async function getTask()
+async function getTasks() {
+    try {
+        const tasks = 
+    } catch (error) {
+        return res.json({ error });
+    }
+}
