@@ -8,7 +8,7 @@ async function registerUser(req, res) {
         console.log(name, email, password);
 
         if (!name || !email || !password) {
-            return res.json({ message: 'Please enter all the details' });
+            return res.json({ message: 'Please enter all the details` });
         }
 
         const userExist = await userModel.findOne({ email: req.body.email });
