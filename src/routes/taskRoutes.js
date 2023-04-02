@@ -2,4 +2,5 @@ const express = require('express');
 
 const taskRouter = express.Router();
 
-taskRouter.get('/tasks', getAll)
+taskRouter.get('/tasks', getTasks);
+taskRouter.get('/task', getTask)
