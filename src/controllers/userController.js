@@ -32,7 +32,7 @@ async function registerUser(req, res) {
     }
 }
 
-// 
+// helper function
 async function verifyUser(userEmail, userPassword) {
     const userExist = userModel.findOne({ email: userEmail});
     const isPasswordMatched = await bcrypt.compare(userPassword, userExist.password)
@@ -62,5 +62,4 @@ async function loginUser(req, res) {
         return res.json({ error });
     };
    
-
 }
