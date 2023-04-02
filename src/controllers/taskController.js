@@ -5,7 +5,8 @@ async function addTask(req, res) {
         const task = new taskModel({
             ...req.body,
             owner: req.user._id
-        })
+        });
+        
     } catch (error) {
         return res.json({ error });
     }
