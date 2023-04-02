@@ -8,8 +8,8 @@ async function adminGetUser(req, res) {
         if(!users){
             return res.json({message:'No user found'})
         }
-        
-        return res.json(users);
+
+        return res.json({user:user});
     } catch (error) {
         return res.json({ error });
     }
