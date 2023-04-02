@@ -32,6 +32,10 @@ async function registerUser(req, res) {
     }
 }
 
+function verifyUser(email, password) {
+    
+}
+
 async function loginUser() {
     const { email, password } = req.body;
     if (!email || !password) {
