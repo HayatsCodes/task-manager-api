@@ -36,7 +36,7 @@ async function getTask(req, res) {
             return res.json({ message: 'Task matching id not found'});
 
         }
-        return res.json({ 'task': task });
+        return res.json(task);
 
     } catch (error) {
         return res.json({ error });
