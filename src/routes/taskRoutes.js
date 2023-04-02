@@ -2,4 +2,4 @@ const express = require('express');
 
 const taskRouter = express.Router();
 
-taskRouter.get('')
+taskRouter.get('/tasks', getAll)
