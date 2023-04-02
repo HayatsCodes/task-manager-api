@@ -9,7 +9,8 @@ async function authMiddleware (req, res, next) {
         return res.json({ message: 'Authentication failed' });
         }
 
-        const decoded = await jwt.verify(token, process.env.SECRET_KEY)
+        const decoded = await jwt.verify(token, process.env.SECRET_KEY);
+        const user = await userModel.findOne
         
     } catch (error) {
         return res.json({ error });
