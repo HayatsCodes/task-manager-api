@@ -5,10 +5,10 @@ const userModel = require('../models/userModel');
 async function registerUser(req, res) {
     try {
         const { name, email, password} = req.body;
-        console.log(name, email, password);
+        console.log(name, email, password)
 
         if (!name || !email || !password) {
-            return res.json({ message: 'Please enter all the details` });
+            return res.json({ message: 'Please enter all the details' });
         }
 
         const userExist = await userModel.findOne({ email: req.body.email });
