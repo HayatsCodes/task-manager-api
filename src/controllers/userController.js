@@ -37,7 +37,7 @@ async function verifyUser(userEmail, userPassword) {
     const isPasswordMatched = await bcrypt.compare(userPassword, userExist.password)
 
     if (!userExist && !isPasswordMatched) {
-        retur 
+        return res.json({message: 'Incorrect email or password'});
     }
 }
 
