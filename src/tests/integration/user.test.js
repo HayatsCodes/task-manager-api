@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const supertest = require('supertest');
 const app = require('../../app');
 
+
+
 describe('POST auth/register', () => {
 
     it('Should register a user succesfully', () => {
