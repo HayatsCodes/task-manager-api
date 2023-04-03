@@ -23,12 +23,15 @@ describe('User endpoints', () => {
     describe('POST auth/register', () => {
         it('Should register a user succesfully', async () => {
             const data = {
-                
+                "firstName": "Jane",
+                "lastName": "dee",
+                "password": "password021",
+                "email": "queen@example.com"
             }
             const res = await request(app)
-            .post('auth/register')
-            .send()
-            .expect('Content-Type', /json/)
+                .post('auth/register')
+                .send()
+                .expect('Content-Type', /json/)
         });
     });
 })
