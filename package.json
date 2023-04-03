@@ -36,5 +36,7 @@
     "mongoose": "^7.0.3",
     "validator": "^13.9.0"
   },
-  
+  "jest": {
+    "preset": "@shelf/jest-mongodb"
+  }
 }
