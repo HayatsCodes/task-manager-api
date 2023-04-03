@@ -43,9 +43,9 @@ async function getTask(req, res) {
     }
 }
 
-async function updateTask() {
+async function updateTask(req, res) {
     try {
-        
+
     } catch (error) {
         return res.json({ error });
     }
