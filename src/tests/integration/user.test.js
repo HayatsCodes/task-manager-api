@@ -15,10 +15,15 @@ describe('User endpoints', () => {
         });
     });
 
+    afterAll(async () => {
+        await mongoose.disconnect();
+        await mongo.stop();
+    })
+
     describe('POST auth/register', () => {
 
         it('Should register a user succesfully', () => {
-    
+            
         });
     });
 })
