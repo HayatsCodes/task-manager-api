@@ -65,7 +65,6 @@ async function loginUser(req, res) {
         user.token = token;
         await user.save();
 
-        console.log(token);
     
         return res.cookie('token', token).json({success:true,message:'LoggedIn Successfully'});
 
