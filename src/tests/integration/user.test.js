@@ -1,4 +1,4 @@
-
+const app = require()
 
 // @Todo:
 //  1. Test the auth/register endpoint:
