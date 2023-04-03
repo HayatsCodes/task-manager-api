@@ -40,7 +40,7 @@ async function verifyUser(userEmail, userPassword) {
     const isPasswordMatched = await bcrypt.compare(userPassword, userExist.password)
 
     if (!userExist && !isPasswordMatched) {
-        return res.json({message: 'Incorrect email or password'});
+        return res.status(400).json({error: 'Incorrect email or password'});
     }
     return userExist._id; 
 }
@@ -49,7 +49,7 @@ async function loginUser(req, res) {
     try {
         const { email, password } = req.body;
         if (!email || !password) {
-            return res.status(400).json({message: 'Please enter your email and password'});
+            return res.status(400).json({error: 'Please enter your email and password'});
         }
     
         const userId = verifyUser(email, password);
@@ -63,7 +63,7 @@ async function loginUser(req, res) {
         return res.cookie({'token': token}).json({success:true,message:'LoggedIn Successfully'});
         
     } catch (error) {
-        return res.json({ error });
+        return res.status(400).json({ error });
     };
    
 }
