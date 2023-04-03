@@ -15,3 +15,5 @@ taskRouter.get('/tasks', authMiddleware, getTasks);
 taskRouter.get('/tasks/:id', authMiddleware, getTask);
 taskRouter.patch('/tasks/:id', authMiddleware, updateTask);
 taskRouter.delete('/tasks/:id', authMiddleware, deleteTask);
+
+module.exports = taskRouter;
