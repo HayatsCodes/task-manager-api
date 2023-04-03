@@ -66,7 +66,17 @@ async function deleteTask(req, res) {
         if(task.deletedCount === 0) {
             return res.json({ error: 'Task could not be deleted'});
         }
+
+        res.status(200).json({ message: 'Task deleted successfully' });
     } catch (error) {
         return res.json({ error });
     }
+}
+
+module.exports = {
+    addTask,
+    getTask,
+    getTasks,
+    updateTask,
+    deleteTask,
 }
