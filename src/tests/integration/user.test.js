@@ -1,4 +1,6 @@
-const app = require()
+
+const supertest = require('supertest');
+const app = require('../../app');
 
 // @Todo:
 //  1. Test the auth/register endpoint:
