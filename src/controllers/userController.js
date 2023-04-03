@@ -52,7 +52,7 @@ async function loginUser(req, res) {
             return res.status(400).json({error: 'Please enter your email and password'});
         }
     
-        const userId = verifyUser(email, password);
+        const userId = await verifyUser(email, password);
 
         const user = await userModel.findById(userId);
     
