@@ -10,7 +10,7 @@ async function addTask(req, res) {
 
         res.status(201).json({ 'task': task} );
     } catch (error) {
-        return res.json({ error });
+        return res.status(400).json({ error });
     }
 }
 
@@ -22,7 +22,7 @@ async function getTasks(req, res) {
         }
         return res.json({ 'tasks': tasks });
     } catch (error) {
-        return res.json({ error });
+        return res.status(400).json({ error });
     }
 }
 
@@ -38,7 +38,7 @@ async function getTask(req, res) {
         return res.json(task);
 
     } catch (error) {
-        return res.json({ error });
+        return res.status(400).json({ error });
     }
 }
 
@@ -48,13 +48,13 @@ async function updateTask(req, res) {
         const task = await taskModel.updateOne({ _id: id }, req.body);
 
         if(task.modifiedCount === 0) {
-            return res.status(400json({ error: 'Task not found'});
+            return res.status(400).json({ error: 'Task not found'});
         }
 
         res.status(200).json({ message: 'Task updated successfully' });
 
     } catch (error) {
-        return res.json({ error });
+        return res.status(400).json({ error });
     }
 }
 
@@ -69,7 +69,7 @@ async function deleteTask(req, res) {
 
         res.status(200).json({ message: 'Task deleted successfully' });
     } catch (error) {
-        return res.json({ error });
+        return res.status(400).json({ error });
     }
 }
 
