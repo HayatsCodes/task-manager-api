@@ -66,6 +66,9 @@ async function loginUser(req, res) {
         console.log(token);
     
         return res.cookie({'token', token}).json({success:true,message:'LoggedIn Successfully'});
+
+        return res.cookie('token', token).json({success:true,message:'LoggedIn Successfully'});
+
         
     } catch (error) {
         return res.status(400).json({ error });
