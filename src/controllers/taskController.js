@@ -48,7 +48,7 @@ async function updateTask(req, res) {
         const task = await taskModel.updateOne({ _id: id }, req.body);
 
         if(task.modifiedCount === 0) {
-            return res.json({ error: 'Task not found'});
+            return res.status(400json({ error: 'Task not found'});
         }
 
         res.status(200).json({ message: 'Task updated successfully' });
