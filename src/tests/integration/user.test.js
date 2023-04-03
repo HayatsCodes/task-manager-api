@@ -20,8 +20,9 @@ describe('User endpoints', () => {
         await mongo.stop();
     })
 
-    describe('POST auth/register', async () => {
-        it('Should register a user succesfully', () => {
+    describe('POST auth/register', () => {
+        it('Should register a user succesfully', async () => {
+            const res = await request(app)
             
         });
     });
