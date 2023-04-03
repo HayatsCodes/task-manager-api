@@ -45,7 +45,7 @@ async function getTask(req, res) {
 
 async function updateTask(req, res) {
     try {
-
+        
     } catch (error) {
         return res.json({ error });
     }
