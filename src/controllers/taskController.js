@@ -45,7 +45,7 @@ async function getTask(req, res) {
 async function updateTask(req, res) {
     try {
         const id = Number(req.params.id);
-        const task = await taskModel.updateOne({ _id: id}, req.body);
+        const task = await taskModel.updateOne({ _id: id }, req.body);
 
         if(task.modifiedCount === 0) {
             return res.json({ error: 'Task not found'});
@@ -61,6 +61,7 @@ async function updateTask(req, res) {
 async function deleteTask(req, res) {
     try {
         const id = Number(req.params.id);
+        const task = await taskModel.deleteOne({ _id: id });
     } catch (error) {
         return res.json({ error });
     }
