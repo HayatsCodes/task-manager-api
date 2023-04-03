@@ -16,8 +16,8 @@ async function addTask(req, res) {
 
 async function getTasks(req, res) {
     try {
-        
-        const tasks = await taskModel.find()
+        const owner = req.user._id;
+        const tasks = await taskModel.find({'owner': owner});
         if (!tasks) {
             return res.json({ error: 'No task found'});
         }
