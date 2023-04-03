@@ -21,7 +21,6 @@ async function registerUser(req, res) {
         req.body.password = hashPassword;
 
         const user = new userModel(req.body);
-        await user.save();
 
         const token = await jwt.sign({ id: user._id }, process.env.SECRET_KEY, {
             expiresIn: process.env.JWT_EXPIRE
