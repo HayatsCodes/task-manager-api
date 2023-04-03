@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const supertest = require('supertest');
+const request = require('supertest');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const app = require('../../app');
 
@@ -20,8 +20,7 @@ describe('User endpoints', () => {
         await mongo.stop();
     })
 
-    describe('POST auth/register', () => {
-        const res = await
+    describe('POST auth/register', async () => {
         it('Should register a user succesfully', () => {
             
         });
