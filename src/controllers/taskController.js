@@ -51,8 +51,11 @@ async function updateTask(req, res) {
             return res.json({ error: 'Task not found'});
         }
 
+        res.status(200).json({ message: 'Task updated successfully' });
 
     } catch (error) {
         return res.json({ error });
     }
 }
+
+async function deleteTask() 
