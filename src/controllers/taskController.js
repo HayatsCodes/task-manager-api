@@ -45,6 +45,9 @@ async function getTask(req, res) {
 
 async function updateTask(req, res) {
     try {
+        const id = +req.params.id
+        const task = await taskModel.findOne({ _id: id});
+
         
     } catch (error) {
         return res.json({ error });
