@@ -32,7 +32,6 @@ async function getTask(req, res) {
         const id = req.params.id;
 
         const task = await taskModel.findOne({ _id: id});
-        console.lo
 
         if(!task) {
             return res.json({ error: 'Task not found'});
