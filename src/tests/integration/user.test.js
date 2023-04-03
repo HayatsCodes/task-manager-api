@@ -3,7 +3,7 @@ const supertest = require('supertest');
 const app = require('../../app');
 
 describe('User endpoints', () => {
-
+    let mongo;
 
     describe('POST auth/register', () => {
 
