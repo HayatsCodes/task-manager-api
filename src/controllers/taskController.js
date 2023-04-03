@@ -52,7 +52,6 @@ async function updateTask(req, res) {
         }
 
 
-
     } catch (error) {
         return res.json({ error });
     }
