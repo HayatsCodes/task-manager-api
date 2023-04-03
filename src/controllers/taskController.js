@@ -62,6 +62,10 @@ async function deleteTask(req, res) {
     try {
         const id = Number(req.params.id);
         const task = await taskModel.deleteOne({ _id: id });
+
+        if(task.deletedCount === 0) {
+            return res.json({ error: 'Task could not be deleted'});
+        }
     } catch (error) {
         return res.json({ error });
     }
