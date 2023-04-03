@@ -21,7 +21,7 @@ describe('User endpoints', () => {
     })
 
     describe('POST auth/register', () => {
-
+        const res = await
         it('Should register a user succesfully', () => {
             
         });
