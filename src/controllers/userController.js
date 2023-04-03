@@ -56,7 +56,7 @@ async function loginUser(req, res) {
 
         const user = await userModel.findById(userId);
 
-        console
+        console.log(process.env.SECRET_KEY)
     
         const token = await jwt.sign({id: userId}, process.env.SECRET_KEY, {
             expiresIn: process.env.JWT_EXPIRE,
