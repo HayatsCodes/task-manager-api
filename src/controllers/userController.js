@@ -27,6 +27,8 @@ async function registerUser(req, res) {
         });
 
         user.token = token;
+        await user.save();
+
         return res.status(201).cookie('token', token).json({success: true, message: 'User registered successfully', data: user})
     } catch (error) {
         return res.json({ error: error });
