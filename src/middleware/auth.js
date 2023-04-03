@@ -16,7 +16,6 @@ async function authMiddleware (req, res, next) {
 
     
         if(!user) {
-            console.log(user);
             return res.status(400).json({ message: 'Authentication failed' });
         }
 
