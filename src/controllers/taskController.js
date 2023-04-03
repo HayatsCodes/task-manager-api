@@ -45,13 +45,13 @@ async function getTask(req, res) {
 async function updateTask(req, res) {
     try {
         const id = +req.params.id
-        const task = await taskModel.findOne({ _id: id});
+        const task = await taskModel.update({ _id: id});
 
         if(!task) {
             return res.json({ message: 'Task matching id not found'});
         }
 
-        
+
 
     } catch (error) {
         return res.json({ error });
