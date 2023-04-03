@@ -29,7 +29,6 @@ async function getTasks(req, res) {
 
 async function getTask(req, res) {
     try {
-        const owner = req.user._id;
         const id = req.params.id;
 
         const task = await taskModel.findOne({ _id: id});
