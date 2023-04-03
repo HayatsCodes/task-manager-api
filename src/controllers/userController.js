@@ -59,9 +59,12 @@ async function loginUser(req, res) {
         console.log(process.env.SECRET_KEY)
     
         const token = await jwt.sign({id: userId}, process.env.SECRET_KEY, {
-            
-            
-        });expiresIn: process.env.JWT_EXPIRE,
+            expiresIn: process.env.JWT_EXPIRE,
+        }, (err, token) => {
+            if (err) {
+                console.error(err);
+            }
+        });
 
         user.token = token;
         await user.save();
