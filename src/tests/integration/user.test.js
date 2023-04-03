@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const supertest = require('supertest');
+const { MongoMemoryServer } = require('mongodb-memory-server');
 const app = require('../../app');
 
 describe('User endpoints', () => {
@@ -7,7 +8,7 @@ describe('User endpoints', () => {
 
     beforeAll(async () => {
         mongo = await MongoMemoryServer.create();
-        
+        const uri = mongo.getUri;
     })
 
     describe('POST auth/register', () => {
