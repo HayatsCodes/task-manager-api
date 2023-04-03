@@ -5,9 +5,8 @@ async function authMiddleware (req, res, next) {
     try {
         const { token } = req.cookies;
 
-
         if(!token) {
-            console.log('token: ', token);
+            console.log('token: ', undefined);
         return res.status(400).json({ message: 'Authentication failed' });
         }
 
@@ -16,7 +15,7 @@ async function authMiddleware (req, res, next) {
 
     
         if(!user) {
-            console.log('user: ', user);
+            console.log('user: ', undefined);
             return res.status(400).json({ message: 'Authentication failed' });
         }
 
