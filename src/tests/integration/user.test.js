@@ -23,7 +23,7 @@ describe('User endpoints', () => {
     describe('POST auth/register', () => {
         it('Should register a user succesfully', async () => {
             const res = await request(app)
-            
+            .post('')
         });
     });
 })
