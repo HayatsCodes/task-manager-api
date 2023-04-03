@@ -26,12 +26,15 @@ describe('User endpoints', () => {
                 firstName: "Jane",
                 lastName: "dee",
                 password: "password021",
-                "email": "queen@example.com"
+                email: "queen@example.com"
             }
             const res = await request(app)
                 .post('auth/register')
-                .send()
+                .send(data)
                 .expect('Content-Type', /json/)
+                .expect(201);
+
+            
         });
     });
 })
