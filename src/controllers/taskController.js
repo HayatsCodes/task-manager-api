@@ -29,7 +29,8 @@ async function getTasks(req, res) {
 
 async function getTask(req, res) {
     try {
-        const id = req.params.id
+        const owner = req.user._id;
+        const id = req.params.id;
 
         const task = await taskModel.findOne({ _id: id});
 
@@ -45,7 +46,7 @@ async function getTask(req, res) {
 
 async function updateTask(req, res) {
     try {
-        const id = Number(req.params.id);
+        const id = req.params.id;
         const task = await taskModel.updateOne({ _id: id }, req.body);
 
         if(task.modifiedCount === 0) {
@@ -61,7 +62,7 @@ async function updateTask(req, res) {
 
 async function deleteTask(req, res) {
     try {
-        const id = Number(req.params.id);
+        const id = req.params.id;
         const task = await taskModel.deleteOne({ _id: id });
 
         if(task.deletedCount === 0) {
