@@ -8,8 +8,12 @@ describe('User endpoints', () => {
 
     beforeAll(async () => {
         mongo = await MongoMemoryServer.create();
-        const uri = mongo.getUri;
-    })
+        const uri = mongo.getUri();
+        await mongoose.connect(uri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+    });
 
     describe('POST auth/register', () => {
 
