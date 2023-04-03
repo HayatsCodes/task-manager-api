@@ -5,6 +5,11 @@ const app = require('../../app');
 describe('User endpoints', () => {
     let mongo;
 
+    beforeAll(async () => {
+        mongo = await MongoMemoryServer.create();
+        
+    })
+
     describe('POST auth/register', () => {
 
         it('Should register a user succesfully', () => {
