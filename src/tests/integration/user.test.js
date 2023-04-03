@@ -29,7 +29,7 @@ describe('User endpoints', () => {
                 email: "queen@example.com"
             }
             const res = await request(app)
-                .post('auth/register')
+                .post('/auth/register')
                 .send(data)
                 .expect('Content-Type', /json/)
                 .expect(201);
