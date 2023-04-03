@@ -58,4 +58,10 @@ async function updateTask(req, res) {
     }
 }
 
-async function deleteTask() 
+async function deleteTask(req, res) {
+    try {
+        const id = Number(req.params.id);
+    } catch (error) {
+        return res.json({ error });
+    }
+}
