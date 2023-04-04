@@ -15,5 +15,9 @@ describe('Task endpoints', () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-    })
+    });
+
+    afterAll(async () => {
+        
+    });
 })
