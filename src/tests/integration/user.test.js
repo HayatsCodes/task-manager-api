@@ -33,7 +33,7 @@ describe('User endpoints', () => {
                 .send(data)
                 .expect('Content-Type', /json/)
                 .expect(200);
-            console.log(res.body)
+            console.log(res.body);
             expect(res.body).toHaveProperty('data');
         });
     });
