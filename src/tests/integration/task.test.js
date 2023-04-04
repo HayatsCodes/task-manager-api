@@ -43,7 +43,7 @@ describe('Task endpoints', () => {
             const res = await request(app)
             .post('/tasks')
             .send(task)
-            .cookies('token', token)
+            .set('Cookie', cookie)
             .expect('Content-Type', /json/)
             .expect(201);
             expect(res.body.task.description).toBe(task.description);
