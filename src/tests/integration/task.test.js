@@ -31,7 +31,7 @@ describe('Task endpoints', () => {
 
         owner = response.body.data._id;
         cookie = response.headers['set-cookie'][0];
-        fakeCookie = `${cookie}abc`
+        fakeCookie = `${cookie}abc`;
     });
 
     afterAll(async () => {
@@ -56,8 +56,16 @@ describe('Task endpoints', () => {
 
         });
 
-        it('Should not add a task for users with invalid token', () => {
-
+        it('Should not add a task for users with invalid token', async () => {
+            const task  = {
+                description: 'First task',
+            }
+            const res = await request(app)
+            .post('/tasks')
+            .send(task)
+            .set('Cookie', cookie)
+            .expect('Content-Type', /json/)
+            .expect(201);
         });
     });
 
