@@ -36,6 +36,8 @@ describe('User endpoints', () => {
                 .expect(201);
             expect(res.body).toHaveProperty('data');
         });
+
+        it()
     });
 
     describe('POST auth/login', () => {
