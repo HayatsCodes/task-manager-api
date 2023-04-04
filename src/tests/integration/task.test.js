@@ -4,3 +4,8 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 require('dotenv').config();
 const app = require('../../app');
 
+describe('Task endpoints', () => {
+    beforeAll( async () => {
+        
+    })
+})
