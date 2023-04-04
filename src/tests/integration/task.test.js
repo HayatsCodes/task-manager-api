@@ -102,7 +102,10 @@ describe('Task endpoints', () => {
     });
 
     describe('GET /tasks/:id', () => {
-        
+        it('Should return a task by id for a logged in user', async () => {
+        const res = await request(app)
+
+        })
     })
 
 });
