@@ -53,9 +53,19 @@ describe('User endpoints', () => {
             expect(res.body.message).toBe('LoggedIn Successfully');
         });
 
-        it('Should not login an unregistered user', async () => {
-            
-        })
+        it('Should not login user with incorrect details', async () => {
+            const data = {
+                password: "password0212",
+                email: "queen@example.com"
+            }
+            const res = await request(app)
+                .post('/auth/login')
+                .send(data)
+                .expect('Content-Type', /json/)
+                .expect(200);
+            expect(res.body.success).toBe(true);
+            expect(res.body.message).toBe('LoggedIn Successfully');
+        });
     });
 })
 
