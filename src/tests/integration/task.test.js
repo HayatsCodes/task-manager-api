@@ -85,8 +85,11 @@ describe('Task endpoints', () => {
         });
     });
 
-    describe('GET /tasks', () => {
-        const res = await request
+    describe('GET /tasks', async () => {
+        const res = await request(app)
+        .get('/tasks')
+        .set('Cookie', cookie)
+        
     })
 
 });
