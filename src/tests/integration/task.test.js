@@ -26,6 +26,7 @@ describe('Task endpoints', () => {
         const response = await request(app)
             .post('/auth/register')
             .send(data);
+        token = response.body.token;
     });
 
     afterAll(async () => {
@@ -40,7 +41,7 @@ describe('Task endpoints', () => {
             }
             const res = await request(app)
             .post('/tasks')
-            .coo
+            .cookies('token', token)
             .send(task)
             .expect('Content-Type', /json/)
             .expect(201);
