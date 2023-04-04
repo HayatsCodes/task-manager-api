@@ -41,7 +41,9 @@ describe('Task endpoints', () => {
             const res = await request(app)
             .post('/tasks')
             .send(task)
-            .expect()
+            .expect('Content-Type', /json/)
+            .expect(201);
+            expect(re)
         });
     })
 
