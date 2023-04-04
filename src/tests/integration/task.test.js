@@ -14,6 +14,6 @@ describe('Task endpoints', () => {
         await mongoose.connect(uri, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-        })
+        });
     })
 })
