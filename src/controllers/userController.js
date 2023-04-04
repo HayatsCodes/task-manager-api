@@ -66,7 +66,7 @@ async function loginUser(req, res) {
             return res.status(400).json({error: errorMessage});
         }
 
-        const user = await userModel.findfindOne({ email: email })
+        const user = await userModel.findOne({ email: email })
         const userId = user._id;
 
     
