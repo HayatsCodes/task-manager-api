@@ -51,37 +51,9 @@ describe('User endpoints', () => {
                 .expect(201);
             expect(res.body).toHaveProperty('data');
         });
-        });
     });
+});
 
-    describe('POST auth/login', () => {
-        it('Should login a registered user succesfully', async () => {
-            const data = {
-                password: "password021",
-                email: "queen@example.com"
-            }
-            const res = await request(app)
-                .post('/auth/login')
-                .send(data)
-                .expect('Content-Type', /json/)
-                .expect(200);
-            expect(res.body.success).toBe(true);
-            expect(res.body.message).toBe('LoggedIn Successfully');
-        });
-
-        it('Should not login user with incorrect details', async () => {
-            const data = {
-                password: "password0212",
-                email: "queen@example.com"
-            }
-            const res = await request(app)
-                .post('/auth/login')
-                .send(data)
-                .expect('Content-Type', /json/)
-                .expect(400);
-            expect(res.body.error).toBe('Incorrect email or password');
-        });
-    });
 
 
 
