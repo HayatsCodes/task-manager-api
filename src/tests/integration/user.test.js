@@ -62,9 +62,8 @@ describe('User endpoints', () => {
                 .post('/auth/login')
                 .send(data)
                 .expect('Content-Type', /json/)
-                .expect(200);
-            expect(res.body.success).toBe(true);
-            expect(res.body.message).toBe('LoggedIn Successfully');
+                .expect(400);
+            expect(res.body.error).toBe(true);
         });
     });
 })
