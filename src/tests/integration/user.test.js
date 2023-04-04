@@ -38,7 +38,19 @@ describe('User endpoints', () => {
         });
 
         it('Should not register user with an existing email', () => {
-            
+            const data = {
+                firstName: "Janet",
+                lastName: "Dickson",
+                password: "password123",
+                email: "queen@example.com"
+            }
+            const res = await request(app)
+                .post('/auth/register')
+                .send(data)
+                .expect('Content-Type', /json/)
+                .expect(201);
+            expect(res.body).toHaveProperty('data');
+        });
         });
     });
 
