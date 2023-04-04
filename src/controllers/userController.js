@@ -59,6 +59,9 @@ async function loginUser(req, res) {
     try {
         const { email, password } = req.body;
         if (!email || !password) {
+            return res
+        .status(201)
+        .cookie('token', token, { httpOnly: true })
             return res.status(400).json({error: 'Please enter your email and password'});
         }
 
