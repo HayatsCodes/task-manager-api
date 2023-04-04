@@ -61,7 +61,7 @@ describe('Task endpoints', () => {
 
         it('Should not add a task for users with invalid token', async () => {
             const task  = {
-                description: 'First task',
+                description: 'Task 1',
             }
             const res = await request(app)
             .post('/tasks')
@@ -74,7 +74,7 @@ describe('Task endpoints', () => {
 
         it('should not add a task for users that are not logged in', async () => {
             const task  = {
-                description: 'Task ',
+                description: 'Task one',
             }
             const res = await request(app)
             .post('/tasks')
