@@ -24,7 +24,7 @@ describe('User endpoints', () => {
         it('Should register a user succesfully', async () => {
             const data = {
                 firstName: "Jane",
-                lastName: "dee",
+                lastName: "Dee",
                 password: "password021",
                 email: "queen@example.com"
             }
