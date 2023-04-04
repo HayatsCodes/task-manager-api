@@ -40,16 +40,16 @@ async function registerUser(req, res) {
 // helper function
 async function verifyUser(userEmail, userPassword) {
     const userExist = await userModel.findOne({ email: userEmail});
+    const errorMessage = 'Incorrect email or password'
     if (!userExist) {
-        return res.status(400).json({error: 'Incorrect email or password'});
+        return errorMessage;
     }
 
     const isPasswordMatched = await bcrypt.compare(userPassword, userExist.password)
 
     if (!isPasswordMatched) {
-        return res.status(400).json({error: 'Incorrect email or password'});
+        return errorMessage;
     }
-    return userExist._id; 
 }
 
 async function loginUser(req, res) {
@@ -65,7 +65,7 @@ async function loginUser(req, res) {
         if (errorMessage) {
             return res.status(400).json({error: errorMessage});
         }
-        
+
         const user = await userModel.find({ email: email })
         const userId = user._id;
 
