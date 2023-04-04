@@ -8,6 +8,12 @@ describe('Task endpoints', () => {
     let mongo;
 
     beforeAll( async () => {
-        mongo = await Mong
+        mongo = await MongoMemoryServer.create();
+        const uri = mongo.getUri();
+
+        await mongoose.connect(uri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        })
     })
 })
