@@ -92,7 +92,7 @@ describe('User endpoints', () => {
         it('Should not login user with incorrect email', async () => {
             const data = {
                 password: "password021",
-                email: "queen@example.com"
+                email: "queem@example.com"
             }
             const res = await request(app)
                 .post('/auth/login')
