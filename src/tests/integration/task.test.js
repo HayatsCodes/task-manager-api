@@ -48,6 +48,7 @@ describe('Task endpoints', () => {
             .expect(201);
             expect(res.body.task.description).toBe(task.description);
             expect(res.body.task.completed).toBe(false);
+            expect(res.body.task.owner).toBe()
 
         });
     })
