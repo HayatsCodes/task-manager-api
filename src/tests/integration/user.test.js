@@ -39,7 +39,9 @@ describe('User endpoints', () => {
         });
     });
 
-    
+    describe('POST auth/login', () => {
+        it('Should ')
+    });
 })
 
 
