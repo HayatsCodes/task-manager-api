@@ -34,8 +34,8 @@ describe('Task endpoints', () => {
     });
 
     describe('POST /tasks', () => {
-        it('Should add a test succesfully for logged in user', () => {
-
+        it('Should add a task succesfully for logged in user', () => {
+            
         });
     })
 
