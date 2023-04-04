@@ -57,7 +57,7 @@ describe('Task endpoints', () => {
             expect(res.body.task.description).toBe(task.description);
             expect(res.body.task.completed).toBe(false);
             expect(res.body.task.owner).toBe(owner);
-            
+
             id = res.body.task._id;
         });
 
@@ -113,7 +113,9 @@ describe('Task endpoints', () => {
             expect(res.body.completed).toBe(false);
             expect(res.body.owner).toBe(owner);
         });
-    })
+    });
+
+    describe('PATCH /tasks:id')
 
 });
 
