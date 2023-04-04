@@ -6,7 +6,7 @@ const app = require('../../app');
 
 describe('Task endpoints', () => {
     let mongo;
-    let token;
+    let cookie;
 
     beforeAll( async () => {
         mongo = await MongoMemoryServer.create();
