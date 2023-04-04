@@ -51,6 +51,10 @@ describe('User endpoints', () => {
                 .expect(200);
             expect(res.body.success).toBe(true);
             expect(res.body.message).toBe('LoggedIn Successfully');
+        });
+
+        it('Should not login an unregistered user', async () => {
+            
         })
     });
 })
