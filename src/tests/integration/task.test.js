@@ -5,7 +5,9 @@ require('dotenv').config();
 const app = require('../../app');
 
 describe('Task endpoints', () => {
+    let mongo;
+
     beforeAll( async () => {
-        
+        mongo = await Mong
     })
 })
