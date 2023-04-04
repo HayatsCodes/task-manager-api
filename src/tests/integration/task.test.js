@@ -119,6 +119,13 @@ describe('Task endpoints', () => {
         it('Should update a task for logged in user', async () => {
             const res = await request(app)
             .patch(`/tasks/${id}`)
+            .send({completed: true})
+            .set('Cookie', cookie)
+            .expect('Content-Type', /json/)
+            .expect(200);
+
+            
+
         });
     })
 
