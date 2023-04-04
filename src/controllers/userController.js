@@ -39,8 +39,8 @@ async function registerUser(req, res) {
 
 // helper function
 async function verifyUser(userEmail, userPassword) {
-    const userExist = await userModel.findOne({ email: userEmail});
     const errorMessage = 'Incorrect email or password'
+    const userExist = await userModel.findOne({ email: userEmail});
     if (!userExist) {
         return errorMessage;
     }
