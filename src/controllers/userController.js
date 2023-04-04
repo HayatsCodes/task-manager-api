@@ -31,7 +31,8 @@ async function registerUser(req, res) {
 
         return res.status(201).cookie('token', token).json({success: true, message: 'User registered successfully', data: user})
     } catch (error) {
-        return res.json({ error: error });
+        return res.status(400).json({ error });
+
     }
 }
 
