@@ -28,7 +28,6 @@ describe('Task endpoints', () => {
             .post('/auth/register')
             .send(data);
 
-        console.log(response.body);
         owner = response.body.data._id;
         cookie = response.headers['set-cookie'][0];
     });
@@ -54,7 +53,9 @@ describe('Task endpoints', () => {
             expect(res.body.task.owner).toBe(owner);
 
         });
-    })
+
+        it('Should ')
+    });
 
 });
 
