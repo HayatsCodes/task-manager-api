@@ -15,6 +15,7 @@ async function registerUser(req, res) {
         if (userExist) {
             return res.status(400).json({ error: 'User already exist with the given email'});
         }
+        
 
         const salt = await bcrypt.genSalt(10);
         const hashPassword = await bcrypt.hash(req.body.password, salt);
