@@ -33,6 +33,7 @@ describe('Task endpoints', () => {
 //      c. should not get task s for users with invalid token
 // 3. Test GET /tasks:id
 //      c. should get a task by id for logged in user
-//      d. ahould not get a task for users with invalid token
+//      d. should not get a task for users with invalid token
 // 4. Test PATCH /tasks:id
-//      
+//      e. should update a task by id for logged in user
+//      f. should not update a task for users with invalid token
