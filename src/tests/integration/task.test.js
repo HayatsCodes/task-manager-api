@@ -97,8 +97,11 @@ describe('Task endpoints', () => {
             expect(res.body).toHaveProperty('tasks');
             expect(Array.isArray(res.body.tasks)).toBe(true);
         });
-       
     });
+
+    describe('GET /tasks/:id', () => {
+        
+    })
 
 });
 
