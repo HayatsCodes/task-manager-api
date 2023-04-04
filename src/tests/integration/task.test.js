@@ -6,6 +6,7 @@ const app = require('../../app');
 
 describe('Task endpoints', () => {
     let mongo;
+    let token;
 
     beforeAll( async () => {
         mongo = await MongoMemoryServer.create();
@@ -25,13 +26,13 @@ describe('Task endpoints', () => {
         const response = await request(app)
             .post('/auth/register')
             .send(data);
+        token = response.body.token;
     });
 
     afterAll(async () => {
         mongoose.disconnect();
         mongo.stop();
     });
-
 
     describe('POST /tasks', () => {
         it('Should add a test succesfully for logged in user', () => {
