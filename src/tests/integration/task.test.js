@@ -18,6 +18,6 @@ describe('Task endpoints', () => {
     });
 
     afterAll(async () => {
-        
+        mongoose.disconnect()
     });
 })
