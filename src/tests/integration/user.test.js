@@ -41,7 +41,17 @@ describe('User endpoints', () => {
 
     describe('POST auth/login', () => {
         it('Should login a registered user succesfully', async () => {
-
+            const data = {
+                password: "password021",
+                email: "queen@example.com"
+            }
+            const res = await request(app)
+                .post('/auth/register')
+                .send(data)
+                .expect('Content-Type', /json/)
+                .expect(201);
+            console.log(res.body);
+            expect(res.body).toHaveProperty('data');
         })
     });
 })
