@@ -15,6 +15,16 @@ describe('Task endpoints', () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
+
+        const data = {
+            firstName: 'John',
+            lastName: 'Doe',
+            password: "password123",
+            email: "king@example.com"
+        }
+        const response = await request(app)
+            .post('/auth/register')
+            .send(data);
     });
 
     afterAll(async () => {
@@ -22,17 +32,6 @@ describe('Task endpoints', () => {
         mongo.stop();
     });
 
-    beforeEach( async () => {
-        const data = {
-            firstName: 'John',
-            lastName: 'Doe',
-            password: "password123",
-            email: "king@example.com"
-        }
-        const res = await request(app)
-            .post('/auth/register')
-            .send(data);
-    })
 
     describe('POST /tasks', () => {
         it('Should add a test succesfully for logged in user', () => {
