@@ -42,7 +42,7 @@ async function verifyUser(userEmail, userPassword) {
     const userExist = await userModel.findOne({ email: userEmail});
     const isPasswordMatched = await bcrypt.compare(userPassword, userExist.password)
 
-    if (!userExist  !isPasswordMatched) {
+    if (!userExist || !isPasswordMatched) {
         return res.status(400).json({error: 'Incorrect email or password'});
     }
     return userExist._id; 
