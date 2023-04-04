@@ -63,7 +63,7 @@ describe('User endpoints', () => {
                 .send(data)
                 .expect('Content-Type', /json/)
                 .expect(400);
-            expect(res.body.error).toBe(true);
+            expect(res.body.error).toBe('Incorrect email or password');
         });
     });
 })
