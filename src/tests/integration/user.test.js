@@ -34,7 +34,7 @@ describe('User endpoints', () => {
                 .expect('Content-Type', /json/)
                 .expect(200);
 
-            expect(res.body).toHaveProperty(data);
+            expect(res.body).toHaveProperty('data');
         });
     });
 })
