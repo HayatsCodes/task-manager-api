@@ -35,6 +35,9 @@ describe('Task endpoints', () => {
 
     describe('POST /tasks', () => {
         it('Should add a task succesfully for logged in user', () => {
+            const task  = {
+                description: 'First task',
+            }
             
         });
     })
