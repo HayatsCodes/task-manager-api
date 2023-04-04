@@ -26,4 +26,5 @@ describe('Task endpoints', () => {
 
 // @Todo:
 //  1. Test POST/tasks 
-//      a. 
+//      a. should post a task succesfully
+// 
