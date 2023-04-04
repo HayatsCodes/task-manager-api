@@ -38,6 +38,8 @@ describe('User endpoints', () => {
             expect(res.body).toHaveProperty('data');
         });
     });
+
+    
 })
 
 
