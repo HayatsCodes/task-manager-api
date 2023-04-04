@@ -43,7 +43,7 @@ describe('Task endpoints', () => {
             .send(task)
             .expect('Content-Type', /json/)
             .expect(201);
-            expect(re)
+            expect(res.body.task.desc)
         });
     })
 
