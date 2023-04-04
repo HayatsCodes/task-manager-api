@@ -32,7 +32,7 @@ describe('User endpoints', () => {
                 .post('/auth/register')
                 .send(data)
                 .expect('Content-Type', /json/)
-                .expect(200);
+                .expect(201);
             console.log(res.body);
             expect(res.body).toHaveProperty('data');
         });
