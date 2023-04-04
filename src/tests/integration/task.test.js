@@ -30,3 +30,5 @@ describe('Task endpoints', () => {
 //      b. should not add a task for users with invalid token
 // 2. Test GET /tasks
 //      b.  should get all task succesfully for logged in user
+// 3. Test GET /tasks:id
+//      c. should get a task 
