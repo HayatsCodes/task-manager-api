@@ -32,7 +32,10 @@ describe('Task endpoints', () => {
         owner = response.body.data._id;
         cookie = response.headers['set-cookie'][0];
         console.log('cookie: ', cookie);
-        fakeCookie = '.eyJpZCI6IjY0MmIwMDE1M2FkYTRjNGFmMmE4ZjdhNiIsImlhdCI6MTY4MDUzOTY2OSwiZXhwIjoxNjgwOTcxNjY5fQ.weNVS8UnQNQLNnJYc27l63XsyHaAP6F6465elLqIb1g';
+        fakeCookie = {
+            cookie:  'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmMyMjI2OGVjNjExYTU1NzllYzlmNiIsImlhdCI6MTY4MDYxMzkyNiwiZXhwIjoxNjgxMDQ1OTI2fQ.5txlo3GfqwPgfi2GxH6VON4ciHW-vJSX6848gSokFOE; Path=/; HttpOnly'
+        }
+        console.log(fa)
     });
 
     afterAll(async () => {
