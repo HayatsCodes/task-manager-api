@@ -86,16 +86,18 @@ describe('Task endpoints', () => {
     });
 
     describe('GET /tasks', async () => {
-        it('Should return a list of tasks for a logged in user')
-        const res = await request(app)
-        .get('/tasks')
-        .set('Cookie', cookie)
-        .expect('Content-Type', /json/)
-        .expect(200);
-
-        expect(res.body).toHaveProperty('tasks');
-        expect(Array.isArray(res.body.tasks)).toBe(true);
-    })
+        it('Should return a list of tasks for a logged in user', {
+            const res = await request(app)
+            .get('/tasks')
+            .set('Cookie', cookie)
+            .expect('Content-Type', /json/)
+            .expect(200);
+    
+            expect(res.body).toHaveProperty('tasks');
+            expect(Array.isArray(res.body.tasks)).toBe(true);
+        });
+       
+    });
 
 });
 
