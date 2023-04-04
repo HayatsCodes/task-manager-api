@@ -37,7 +37,9 @@ describe('User endpoints', () => {
             expect(res.body).toHaveProperty('data');
         });
 
-        it()
+        it('Should not register user with an existing email', () => {
+            
+        });
     });
 
     describe('POST auth/login', () => {
