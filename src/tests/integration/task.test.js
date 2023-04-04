@@ -28,7 +28,7 @@ describe('Task endpoints', () => {
             .post('/auth/register')
             .send(data);
 
-        owner = response.body.owner;
+        owner = response.body._id;
         cookie = response.headers['set-cookie'][0];
     });
 
@@ -50,7 +50,7 @@ describe('Task endpoints', () => {
             .expect(201);
             expect(res.body.task.description).toBe(task.description);
             expect(res.body.task.completed).toBe(false);
-            expect(res.body.task.owner).toBe()
+            expect(res.body.task.owner).toBe(owner);
 
         });
     })
