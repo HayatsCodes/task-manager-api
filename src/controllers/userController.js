@@ -62,9 +62,12 @@ async function loginUser(req, res) {
         console.log('password: ', password);
     
         const errorMessage = await verifyUser(email, password);
+        if (errorMessage) {
+            return res.status(400).json({error: errorMessage});
+        }
+        
         const user = await userModel.find({ email: email })
-
-        const userId = await userModel.findById(userId);
+        const userId = user._id;
 
     
         const token = await jwt.sign({id: userId}, process.env.SECRET_KEY, {
