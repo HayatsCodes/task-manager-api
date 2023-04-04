@@ -82,7 +82,7 @@ describe('User endpoints', () => {
             expect(res.body.error).toBe('Incorrect email or password');
         });
     });
-})
+
 
 
 // @Todo:
