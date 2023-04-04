@@ -31,7 +31,7 @@ describe('Task endpoints', () => {
 
         owner = response.body.data._id;
         cookie = response.headers['set-cookie'][0];
-        fakeCookie = `${cookie}abc`;
+        fakeCookie = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmIwMDE1M2FkYTRjNGFmMmE4ZjdhNiIsImlhdCI6MTY4MDUzOTY2OSwiZXhwIjoxNjgwOTcxNjY5fQ.weNVS8UnQNQLNnJYc27l63XsyHaAP6F6465elLqIb1g';
     });
 
     afterAll(async () => {
