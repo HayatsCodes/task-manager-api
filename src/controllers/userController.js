@@ -76,6 +76,7 @@ async function loginUser(req, res) {
 
         
     } catch (error) {
+        console.log('Error occurred at line: ', error.stack);
         return res.status(400).json({ error });
     };
    
