@@ -112,7 +112,7 @@ describe('Task endpoints', () => {
             expect(res.body.description).toBe('First task');
             expect(res.body.completed).toBe(false);
             expect(res.body.owner).toBe(owner);
-        })
+        });
     })
 
 });
