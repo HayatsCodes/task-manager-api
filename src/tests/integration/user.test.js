@@ -40,7 +40,9 @@ describe('User endpoints', () => {
     });
 
     describe('POST auth/login', () => {
-        it('Should ')
+        it('Should login a registered user succesfully', async () => {
+
+        })
     });
 })
 
