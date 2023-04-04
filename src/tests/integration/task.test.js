@@ -86,6 +86,7 @@ describe('Task endpoints', () => {
     });
 
     describe('GET /tasks', () => {
+
         it('Should return a list of tasks for a logged in user', async () => {
             const res = await request(app)
             .get('/tasks')
