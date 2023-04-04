@@ -7,7 +7,7 @@ async function registerUser(req, res) {
         const { firstName, lastName, email, password} = req.body;
 
         if (!firstName || !lastName || !email || !password) {
-            return res.json({ message: 'Please enter all the details' });
+            return res.status(400).json({ error: 'Please enter all the details' });
         }
 
         const userExist = await userModel.findOne({ email: req.body.email });
