@@ -92,7 +92,7 @@ describe('Task endpoints', () => {
         .expect('Content-Type', /json/)
         .expect(200);
 
-        expect(res.body.tasks).to
+        expect(res.body).toHave
     })
 
 });
