@@ -117,7 +117,7 @@ describe('Task endpoints', () => {
 
     describe('PATCH /tasks:id', () => {
         it('Should update a task for logged in user', () => {
-
+            const res = await 
         });
     })
 
