@@ -71,6 +71,10 @@ describe('Task endpoints', () => {
             .expect(400);
             expect(res.body.message).toBe('Authentication failed');
         });
+
+        it('should not add a task for users that are not logged in', () => {
+            
+        });
     });
 
 });
