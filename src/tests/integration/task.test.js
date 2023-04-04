@@ -28,8 +28,8 @@ describe('Task endpoints', () => {
             .post('/auth/register')
             .send(data);
 
-        console.log(response)
-        owner = response.body._id;
+        console.log(response.body);
+        owner = response.body.data._id;
         cookie = response.headers['set-cookie'][0];
     });
 
