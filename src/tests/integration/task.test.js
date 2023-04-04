@@ -86,7 +86,7 @@ describe('Task endpoints', () => {
     });
 
     describe('GET /tasks', () => {
-        
+        const res = await request
     })
 
 });
