@@ -29,7 +29,10 @@ async function registerUser(req, res) {
         user.token = token;
         await user.save();
 
-        return res.status(201).cookie('token', token).json({success: true, message: 'User registered successfully', data: user})
+        return res
+        .status(201)
+        .cookie('token', token, { httpOnly: true })
+        .json({ success: true, message: 'User registered successfully', data: user });
     } catch (error) {
         console.log('Error occurred at line: ', error.stack);
         return res.status(400).json({ error });
