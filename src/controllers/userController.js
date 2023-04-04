@@ -80,7 +80,7 @@ async function loginUser(req, res) {
         await user.save();
 
         return res
-        .status(201)
+        .status(200)
         .cookie('token', token, { httpOnly: true })
         .json({success:true,message:'LoggedIn Successfully'});
 
