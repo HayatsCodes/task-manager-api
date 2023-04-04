@@ -31,7 +31,7 @@ async function registerUser(req, res) {
 
         return res.status(201).cookie('token', token).json({success: true, message: 'User registered successfully', data: user})
     } catch (error) {
-        
+        console.log('Error occurred at line: ', error.stack);
         return res.status(400).json({ error });
 
     }
