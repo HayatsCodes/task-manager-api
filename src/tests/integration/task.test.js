@@ -85,7 +85,9 @@ describe('Task endpoints', () => {
         });
     });
 
-    describe()
+    describe('GET /tasks', () => {
+        
+    })
 
 });
 
