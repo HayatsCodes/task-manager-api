@@ -22,7 +22,11 @@ describe('Task endpoints', () => {
         mongo.stop();
     });
 
-    
+    describe('POST /tasks', () => {
+        it('Should add a test succesfully for logged in user', () => {
+            
+        });
+    })
 
 });
 
