@@ -40,6 +40,10 @@ async function registerUser(req, res) {
 // helper function
 async function verifyUser(userEmail, userPassword) {
     const userExist = await userModel.findOne({ email: userEmail});
+    if (!userExist || !isPasswordMatched) {
+        return res.status(400).json({error: 'Incorrect email or password'});
+    }
+    
     const isPasswordMatched = await bcrypt.compare(userPassword, userExist.password)
 
     if (!userExist || !isPasswordMatched) {
