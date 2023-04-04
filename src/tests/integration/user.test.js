@@ -50,7 +50,7 @@ describe('User endpoints', () => {
                 .expect('Content-Type', /json/)
                 .expect(200);
             expect(res.body.success).toBe(true);
-            expect(res.body.message).toBe(true);
+            expect(res.body.message).toBe('LoggedIn Successfully');
         })
     });
 })
