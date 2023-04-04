@@ -86,7 +86,7 @@ describe('Task endpoints', () => {
     });
 
     describe('GET /tasks', async () => {
-        it('Should return a list of tasks for a logged in user', {
+        it('Should return a list of tasks for a logged in user', async () => {
             const res = await request(app)
             .get('/tasks')
             .set('Cookie', cookie)
