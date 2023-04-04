@@ -6,6 +6,7 @@ const app = require('../../app');
 
 describe('Task endpoints', () => {
     let mongo;
+    let owner;
     let cookie;
 
     beforeAll( async () => {
@@ -27,6 +28,7 @@ describe('Task endpoints', () => {
             .post('/auth/register')
             .send(data);
 
+        owner = response.body.owner;
         cookie = response.headers['set-cookie'][0];
     });
 
