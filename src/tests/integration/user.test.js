@@ -57,6 +57,19 @@ describe('User endpoints', () => {
                 .expect(400);
             expect(res.body.error).toBe('User already exist with the given email');
         });
+
+        it('Should not register user with a password that is too short', async () => {
+            const data = {
+                password: "pass",
+                email: "queen@example.com"
+            }
+            const res = await request(app)
+                .post('/auth/login')
+                .send(data)
+                .expect('Content-Type', /json/)
+                .expect(400);
+            expect(res.body.error).toBe('Password must be at least 8 characters long');
+        });
     });
 
     describe('POST auth/login', () => {
