@@ -8,6 +8,7 @@ describe('Task endpoints', () => {
     let mongo;
     let owner;
     let cookie;
+    let fakeCookie;
 
     beforeAll( async () => {
         mongo = await MongoMemoryServer.create();
@@ -55,7 +56,9 @@ describe('Task endpoints', () => {
 
         });
 
-        it('Should not add a task for users with invalid token')
+        it('Should not add a task for users with invalid token', () => {
+
+        });
     });
 
 });
@@ -63,7 +66,7 @@ describe('Task endpoints', () => {
 // @Todo:
 //  1. Test POST /tasks 
 //      a. should add a task succesfully for logged in user
-//      b. should not add a task for users with invalid token
+//      b. should not add a task for users with invalid token or not logged in
 // 2. Test GET /tasks
 //      b.  should get all task succesfully for logged in user
 //      c. should not get task s for users with invalid token
