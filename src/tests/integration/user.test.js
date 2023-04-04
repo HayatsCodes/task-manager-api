@@ -35,7 +35,7 @@ describe('User endpoints', () => {
                 .expect('Content-Type', /json/)
                 .expect(201);
             expect(res.body).toHaveProperty('data');
-            expect(res.body).toHaveProperty('data');
+            expect(res.body.data).toBe(data);
         });
 
         it('Should not register user with an existing email', async () => {
