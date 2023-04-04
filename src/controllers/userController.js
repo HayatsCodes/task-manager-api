@@ -63,7 +63,8 @@ async function loginUser(req, res) {
     
         const userId = await verifyUser(email, password);
 
-        const user = await userModel.findById(userId);
+        const user =         const userId = await userModel.findOne({ email: email }).select('_id');
+
 
     
         const token = await jwt.sign({id: userId}, process.env.SECRET_KEY, {
