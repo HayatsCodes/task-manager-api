@@ -26,7 +26,6 @@ describe('Task endpoints', () => {
         const response = await request(app)
             .post('/auth/register')
             .send(data);
-        token = response.body.token;
     });
 
     afterAll(async () => {
