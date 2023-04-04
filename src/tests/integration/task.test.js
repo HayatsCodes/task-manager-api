@@ -89,7 +89,10 @@ describe('Task endpoints', () => {
         const res = await request(app)
         .get('/tasks')
         .set('Cookie', cookie)
-        
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+        expect(res)
     })
 
 });
