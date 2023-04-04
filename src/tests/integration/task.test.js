@@ -61,7 +61,7 @@ describe('Task endpoints', () => {
 
         it('Should not add a task for users with invalid token', async () => {
             const task  = {
-                description: 'Task 1',
+                description: 'First task',
             }
             const res = await request(app)
             .post('/tasks')
@@ -72,9 +72,9 @@ describe('Task endpoints', () => {
             expect(res.body.message).toBe('Authentication failed');
         });
 
-        it('should not add a task for users that are not logged in', () => {
+        it('should not add a task for users that are not logged in', async () => {
             const task  = {
-                description: 'Task One',
+                description: 'Task ',
             }
             const res = await request(app)
             .post('/tasks')
@@ -82,7 +82,6 @@ describe('Task endpoints', () => {
             .expect('Content-Type', /json/)
             .expect(400);
             expect(res.body.message).toBe('Authentication failed');
-        });
         });
     });
 
