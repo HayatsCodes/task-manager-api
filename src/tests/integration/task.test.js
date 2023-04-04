@@ -124,10 +124,25 @@ describe('Task endpoints', () => {
             .expect('Content-Type', /json/)
             .expect(200);
 
-            expect(res.body.owner).toBe(owner);
+            expect(res.body.message).toBe('Task updated successfully');
+
+        });
+    });
+
+    describe('D /tasks:id', () => {
+        it('Should delete a task for logged in user', async () => {
+            const res = await request(app)
+            .delete(`/tasks/${id}`)
+            .send({completed: true})
+            .set('Cookie', cookie)
+            .expect('Content-Type', /json/)
+            .expect(200);
+
+            expect(res.body.message).toBe('Task updated successfully');
 
         });
     })
+
 
 });
 
