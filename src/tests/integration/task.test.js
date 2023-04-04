@@ -57,9 +57,8 @@ describe('Task endpoints', () => {
             expect(res.body.task.description).toBe(task.description);
             expect(res.body.task.completed).toBe(false);
             expect(res.body.task.owner).toBe(owner);
-            id = res.body.task_id;
-
-            console.log('body: ', res.body);
+            
+            id = res.body.task._id;
         });
 
         it('Should not add a task for users with invalid token', async () => {
