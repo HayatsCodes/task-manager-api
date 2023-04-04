@@ -18,6 +18,10 @@ describe('Task endpoints', () => {
     });
 
     afterAll(async () => {
-        mongoose.disconnect()
+        mongoose.disconnect();
+        mongo.stop();
     });
-})
+
+});
+
+// @Todo:
