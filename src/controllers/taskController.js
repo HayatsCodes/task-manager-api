@@ -38,6 +38,7 @@ async function getTask(req, res) {
         return res.json(task);
 
     } catch (error) {
+        
         return res.status(400).json({ error });
     }
 }
