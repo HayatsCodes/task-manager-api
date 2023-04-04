@@ -63,6 +63,7 @@ describe('Task endpoints', () => {
             const res = await request(app)
             .post('/tasks')
             .send(task)
+            .set('Cookie', fakeCookie)
             .expect('Content-Type', /json/)
             .expect(400);
             expect(res.body.message).toBe('Authentication failed');
