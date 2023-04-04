@@ -49,7 +49,7 @@ describe('User endpoints', () => {
                 .send(data)
                 .expect('Content-Type', /json/)
                 .expect(400);
-            expect(res.body).toHaveProperty('data');
+            expect(res.body.error).toBe('User already exist with the given email');
         });
     });
 
