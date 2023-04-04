@@ -1,1 +1,2 @@
-const mong
+const mongoose = require('mongoose');
+const 
