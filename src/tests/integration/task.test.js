@@ -92,7 +92,8 @@ describe('Task endpoints', () => {
         .expect('Content-Type', /json/)
         .expect(200);
 
-        expect(res.body).toHave
+        expect(res.body).toHaveProperty('tasks');
+        expect(Array.isArray(res.body.tasks)).toBe(true);
     })
 
 });
