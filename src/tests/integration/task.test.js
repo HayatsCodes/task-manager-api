@@ -23,11 +23,11 @@ describe('Task endpoints', () => {
             password: "password123",
             email: "king@example.com"
         }
-        const response = await request.agent(app)
+        const response = await request(app)
             .post('/auth/register')
             .send(data);
 
-        const cookie = response.headers['set-cookie'][0];
+        cookie = response.headers['set-cookie'][0];
     });
 
     afterAll(async () => {
