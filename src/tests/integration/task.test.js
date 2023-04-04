@@ -57,7 +57,7 @@ describe('Task endpoints', () => {
             expect(res.body.task.description).toBe(task.description);
             expect(res.body.task.completed).toBe(false);
             expect(res.body.task.owner).toBe(owner);
-            id = res.body._id;
+            id = res.body.task_id;
 
             console.log('body: ', res.body);
         });
