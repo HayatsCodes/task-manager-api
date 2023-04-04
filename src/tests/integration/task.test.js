@@ -9,6 +9,7 @@ describe('Task endpoints', () => {
     let owner;
     let cookie;
     let fakeCookie;
+    let id;
 
     beforeAll( async () => {
         mongo = await MongoMemoryServer.create();
@@ -100,7 +101,7 @@ describe('Task endpoints', () => {
     });
 
     describe('GET /tasks/:id', () => {
-        
+
     })
 
 });
