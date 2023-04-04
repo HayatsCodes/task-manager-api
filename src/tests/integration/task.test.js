@@ -66,7 +66,7 @@ describe('Task endpoints', () => {
             .set('Cookie', fakeCookie)
             .expect('Content-Type', /json/)
             .expect(400);
-            expect(res.body.message).toBe()
+            expect(res.body.message).toBe('Authentication failed');
         });
     });
 
