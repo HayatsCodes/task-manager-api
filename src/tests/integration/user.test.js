@@ -34,7 +34,6 @@ describe('User endpoints', () => {
                 .send(data)
                 .expect('Content-Type', /json/)
                 .expect(201);
-            console.log(res.body);
             expect(res.body).toHaveProperty('data');
         });
     });
@@ -46,11 +45,10 @@ describe('User endpoints', () => {
                 email: "queen@example.com"
             }
             const res = await request(app)
-                .post('/auth/register')
+                .post('/auth/login')
                 .send(data)
                 .expect('Content-Type', /json/)
-                .expect(201);
-            console.log(res.body);
+                .expect(200);
             expect(res.body).toHaveProperty('data');
         })
     });
