@@ -54,6 +54,8 @@ async function loginUser(req, res) {
         if (!email || !password) {
             return res.status(400).json({error: 'Please enter your email and password'});
         }
+
+        console.log(password)
     
         const userId = await verifyUser(email, password);
 
