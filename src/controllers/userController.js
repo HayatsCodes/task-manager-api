@@ -62,7 +62,7 @@ async function loginUser(req, res) {
         console.log('password: ', password);
     
         const errorMessage = await verifyUser(email, password);
-        
+        const userId = await userModel.findOne({ email: email }).select('_id');
 
         const user = await userModel.findById(userId);
 
