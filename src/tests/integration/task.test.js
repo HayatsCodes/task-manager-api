@@ -63,9 +63,10 @@ describe('Task endpoints', () => {
             const res = await request(app)
             .post('/tasks')
             .send(task)
-            .set('Cookie', cookie)
+            .set('Cookie', fakeCookie)
             .expect('Content-Type', /json/)
-            .expect(201);
+            .expect(400);
+            expect(res.body.message).toBe()
         });
     });
 
