@@ -37,3 +37,6 @@ describe('Task endpoints', () => {
 // 4. Test PATCH /tasks:id
 //      e. should update a task by id for logged in user
 //      f. should not update a task for users with invalid token
+// 5. TEST DELETE /tasks:id
+//      g. should delete a task by id for logged in user
+//      h. 
