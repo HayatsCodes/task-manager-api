@@ -30,6 +30,7 @@ describe('Task endpoints', () => {
 
         owner = response.body.data._id;
         cookie = response.headers['set-cookie'][0];
+        fakeCookie = `${cookie}abc`
     });
 
     afterAll(async () => {
@@ -54,7 +55,7 @@ describe('Task endpoints', () => {
 
         });
 
-        it('Should ')
+        it('Should not add a task for users with invalid token')
     });
 
 });
