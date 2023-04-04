@@ -40,12 +40,13 @@ describe('Task endpoints', () => {
             }
             const res = await request(app)
             .post('/tasks')
+            .coo
             .send(task)
             .expect('Content-Type', /json/)
             .expect(201);
             expect(res.body.task.description).toBe(task.description);
             expect(res.body.task.completed).toBe(false);
-            
+
         });
     })
 
