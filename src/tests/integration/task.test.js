@@ -36,7 +36,7 @@ describe('Task endpoints', () => {
             cookie:  'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmMyMjI2OGVjNjExYTU1NzllYzlmNiIsImlhdCI6MTY4MDYxMzkyNiwiZXhwIjoxNjgxMDQ1OTI2fQ.5txlo3GfqwPgfi2GxH6VON4ciHW-vJSX6848gSokFOE; Path=/; HttpOnly'
         }];
         fakeCookie = demoCookie[0].cookie;
-        console.log('fakeCookie', fakeCookie);
+        console.log('fakeCookie: ', fakeCookie);
     });
 
     afterAll(async () => {
