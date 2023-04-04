@@ -60,8 +60,10 @@ describe('User endpoints', () => {
 
         it('Should not register user with a password that is too short', async () => {
             const data = {
+                firstName: 'King',
+                lastName: 'Bin',
                 password: "pass",
-                email: "queen@example.com"
+                email: "king@example.com"
             }
             const res = await request(app)
                 .post('/auth/login')
