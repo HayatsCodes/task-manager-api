@@ -48,6 +48,7 @@ async function getTasks(req, res) {
                     return null;
                 }
             }
+            return tasks;
         });
 
         if (cachedTasks) {
