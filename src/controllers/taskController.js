@@ -50,6 +50,7 @@ async function getTasks(req, res) {
             }
             return savedTasks;
         });
+        
         if (cachedTasks) {
             return res.json({ 'tasks': cachedTasks });
         }
