@@ -41,6 +41,7 @@ async function getTasks(req, res) {
                 return null;
             }
             results = JSON.parse(results);
+            
             const tasks = results.getTasks
             return tasks;
         });
