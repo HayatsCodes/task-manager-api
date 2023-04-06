@@ -9,7 +9,8 @@ const taskModel = require('../models/taskModel');
 // if yes, we get the neccesary data from it
 //  else, we get the data from  our db and save it to redis db.
 
-const redis = 
+const redis = new Redis();
+
 
 
 async function addTask(req, res) {
