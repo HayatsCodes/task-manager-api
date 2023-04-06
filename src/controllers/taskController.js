@@ -5,8 +5,8 @@ const taskModel = require('../models/taskModel');
 // the value should be an object 
 
 owner: {
-    getTasks: {tasks}
-    getTask: {id: task}
+    getTasks: { tasks }
+    getTask: { id: task }
 
 }
 
@@ -27,7 +27,7 @@ async function addTask(req, res) {
         });
         await task.save();
 
-        res.status(201).json({ 'task': task} );
+        res.status(201).json({ 'task': task });
     } catch (error) {
         return res.status(400).json({ error });
     }
@@ -43,21 +43,21 @@ async function getTasks(req, res) {
             results = JSON.parse(results);
             try {
                 const tasks = results.getTasks
-            } catch(err) {
+            } catch (err) {
                 if (err instanceof TypeError) {
-                    tasks
+                    return null;
+                }
             }
-            return tasks;
         });
 
-        if(cachedTasks) {
+        if (cachedTasks) {
             return res.json({ 'tasks': cachedTasks });
         }
-        const tasks = await taskModel.find({'owner': owner});
+        const tasks = await taskModel.find({ 'owner': owner });
         if (!tasks) {
-            return res.json({ error: 'No task found'});
+            return res.json({ error: 'No task found' });
         }
-        redisClient.set(owner, JSON.stringify({'getTasks': tasks}));
+        redisClient.set(owner, JSON.stringify({ 'getTasks': tasks }));
         return res.json({ 'tasks': tasks });
     } catch (error) {
         return res.status(400).json({ error });
@@ -67,10 +67,10 @@ async function getTasks(req, res) {
 async function getTask(req, res) {
     try {
         const id = req.params.id;
-        const task = await taskModel.findOne({ _id: id});
+        const task = await taskModel.findOne({ _id: id });
 
-        if(!task) {
-            return res.json({ error: 'Task not found'});
+        if (!task) {
+            return res.json({ error: 'Task not found' });
         }
         return res.json(task);
 
@@ -85,8 +85,8 @@ async function updateTask(req, res) {
         const id = req.params.id;
         const task = await taskModel.updateOne({ _id: id }, req.body);
 
-        if(task.modifiedCount === 0) {
-            return res.status(400).json({ error: 'Task not found'});
+        if (task.modifiedCount === 0) {
+            return res.status(400).json({ error: 'Task not found' });
         }
 
         res.status(200).json({ message: 'Task updated successfully' });
@@ -101,8 +101,8 @@ async function deleteTask(req, res) {
         const id = req.params.id;
         const task = await taskModel.deleteOne({ _id: id });
 
-        if(task.deletedCount === 0) {
-            return res.json({ error: 'Task could not be deleted'});
+        if (task.deletedCount === 0) {
+            return res.json({ error: 'Task could not be deleted' });
         }
 
         res.status(200).json({ message: 'Task deleted successfully' });
