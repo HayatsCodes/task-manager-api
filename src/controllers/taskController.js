@@ -42,6 +42,7 @@ async function getTasks(req, res) {
             }
             results = JSON.parse(results);
             const tasks = results.getTasks
+            return res.json({ 'tasks': tasks });
         });
         if(cachedOwner) {
             
