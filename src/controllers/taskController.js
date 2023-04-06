@@ -1,7 +1,8 @@
 const Redis = require('ioredis');
 const taskModel = require('../models/taskModel');
 
-// 
+// Owner should be the key to a redis db
+// the value should be an object 
 
 
 async function addTask(req, res) {
