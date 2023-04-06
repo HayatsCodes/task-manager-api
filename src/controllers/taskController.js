@@ -42,15 +42,14 @@ async function getTasks(req, res) {
             }
             results = JSON.parse(results);
             try {
-                const tasks = results.getTasks
+                const savedTasks = results.getTasks
             } catch (err) {
                 if (err instanceof TypeError) {
                     return null;
                 }
             }
-            return getT;
+            return savedTasks;
         });
-
         if (cachedTasks) {
             return res.json({ 'tasks': cachedTasks });
         }
