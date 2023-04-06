@@ -45,7 +45,7 @@ async function getTasks(req, res) {
             return tasks;
         });
         if(cachedTasks) {
-            
+            return res.json({ 'tasks': cachedTasks });
         }
         const tasks = await taskModel.find({'owner': owner});
         if (!tasks) {
