@@ -44,10 +44,11 @@ async function getTasks(req, res) {
             const tasks = results.getTasks
             return tasks;
         });
-        
+
         if(cachedTasks) {
             return res.json({ 'tasks': cachedTasks });
         }
+        
         const tasks = await taskModel.find({'owner': owner});
         if (!tasks) {
             return res.json({ error: 'No task found'});
