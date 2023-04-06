@@ -82,6 +82,7 @@ async function updateTask(req, res) {
         const cachedTask = await redisClient.get(id);
         if (cachedTask) {
             const savedTask = JSON.parse(cachedTask);
+            redisClient.set()
             return res.json(savedTask);
         }
 
