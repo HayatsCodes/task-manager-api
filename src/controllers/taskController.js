@@ -1,5 +1,6 @@
 const Redis = require('ioredis');
 const taskModel = require('../models/taskModel');
+const { json } = require('express');
 
 // Owner should be the key to a redis db
 // the value should be an object 
@@ -40,7 +41,7 @@ async function getTasks(req, res) {
             if (!results) {
                 return null;
             }
-            
+            const tasks = JS
         });
         if(cachedOwner) {
             
