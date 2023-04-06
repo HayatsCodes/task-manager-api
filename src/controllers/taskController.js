@@ -36,7 +36,7 @@ async function addTask(req, res) {
 async function getTasks(req, res) {
     try {
         const owner = req.user._id;
-        redis.get(owner);
+        await redis.get(owner)
         const tasks = await taskModel.find({'owner': owner});
         if (!tasks) {
             return res.json({ error: 'No task found'});
