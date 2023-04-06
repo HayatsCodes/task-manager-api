@@ -52,7 +52,7 @@ async function getTasks(req, res) {
         if (!tasks) {
             return res.json({ error: 'No task found'});
         }
-        redisClient.set(own)
+        redisClient.set(owner, )
         return res.json({ 'tasks': tasks });
     } catch (error) {
         return res.status(400).json({ error });
