@@ -62,7 +62,7 @@ async function getTask(req, res) {
         if (!task) {
             return res.json({ error: 'Task not found' });
         }
-        redisClient.set(id, JSON.stringify(tasks));
+        redisClient.set(id, JSON.stringify(task));
         return res.json(task);
 
     } catch (error) {
@@ -82,11 +82,10 @@ async function updateTask(req, res) {
 
         const cachedTask = await redisClient.get(id);
         if (cachedTask) {
-            const savedTask = JSON.parse(cachedTask);
-            redisClient.set()
-            return res.json(savedTask);
+            redisClient.set(id, JSON.stringify(task));
         }
-
+        
+        return res.json(savedTask);
         res.status(200).json({ message: 'Task updated successfully' });
 
     } catch (error) {
