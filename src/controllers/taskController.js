@@ -35,7 +35,7 @@ async function getTasks(req, res) {
         const cachedTasks = await redisClient.get(owner);
 
         if (cachedTasks) {
-            return res.json({ 'tasks': cachedTasks });
+            return res.json({ 'tasks': tasks });
         }
         const tasks = await taskModel.find({ 'owner': owner });
         if (!tasks) {
