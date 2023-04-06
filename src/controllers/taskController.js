@@ -28,6 +28,7 @@ async function addTask(req, res) {
 
 async function getTasks(req, res) {
     try {
+        
         const owner = req.user._id;
         const tasks = await taskModel.find({'owner': owner});
         if (!tasks) {
