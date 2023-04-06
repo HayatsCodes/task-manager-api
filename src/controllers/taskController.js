@@ -4,10 +4,7 @@ const taskModel = require('../models/taskModel');
 // Owner should be the key to a redis db
 // the value should be an object 
 
-owner: {
-    getTasks: { tasks }
-
-}
+// owner: tasks
 
 // when a get request is made
 // we check if the owner exists in redis db
@@ -35,20 +32,7 @@ async function addTask(req, res) {
 async function getTasks(req, res) {
     try {
         const owner = req.user._id;
-        const cachedTasks = redisClient.get(owner, (err, results) => {
-            if (!results) {
-                return null;
-            }
-            results = JSON.parse(results);
-            try {
-                const savedTasks = results.getTasks
-            } catch (err) {
-                if (err instanceof TypeError) {
-                    return null;
-                }
-            }
-            return savedTasks;
-        });
+        const cachedTasks = redisClient.get(owner);
 
         if (cachedTasks) {
             return res.json({ 'tasks': cachedTasks });
