@@ -52,6 +52,7 @@ async function getTasks(req, res) {
 async function getTask(req, res) {
     try {
         const id = req.params.id;
+        const cachedTask = await redisClient.get()
         const task = await taskModel.findOne({ _id: id });
 
         if (!task) {
