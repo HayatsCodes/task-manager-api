@@ -44,6 +44,7 @@ async function getTasks(req, res) {
             const tasks = results.getTasks
             return tasks;
         });
+        
         if(cachedTasks) {
             return res.json({ 'tasks': cachedTasks });
         }
