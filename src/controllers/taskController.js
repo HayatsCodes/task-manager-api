@@ -15,7 +15,7 @@ owner: {
 // if yes, we get the neccesary data from it
 //  else, we get the data from  our db and save it to redis db.
 
-const redis = new Redis();
+const redisClient = new Redis
 
 
 
@@ -36,7 +36,7 @@ async function addTask(req, res) {
 async function getTasks(req, res) {
     try {
         const owner = req.user._id;
-        const cachedTasks = await redis.get(owner, (err, results) => {
+        const cachedTasks = await redisClient.get(owner, (err, results) => {
             if (!results) {
                 return null;
             }
@@ -52,6 +52,7 @@ async function getTasks(req, res) {
         if (!tasks) {
             return res.json({ error: 'No task found'});
         }
+        redisClient.set()
         return res.json({ 'tasks': tasks });
     } catch (error) {
         return res.status(400).json({ error });
