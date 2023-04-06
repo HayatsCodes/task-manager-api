@@ -84,7 +84,7 @@ async function updateTask(req, res) {
         if (cachedTask) {
             redisClient.set(id, JSON.stringify(task));
         }
-        
+
         return res.json(savedTask);
         res.status(200).json({ message: 'Task updated successfully' });
 
@@ -101,6 +101,8 @@ async function deleteTask(req, res) {
         if (task.deletedCount === 0) {
             return res.json({ error: 'Task could not be deleted' });
         }
+
+    
 
         res.status(200).json({ message: 'Task deleted successfully' });
     } catch (error) {
