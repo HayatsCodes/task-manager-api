@@ -1,15 +1,6 @@
 const Redis = require("ioredis");
 const taskModel = require('../models/taskModel');
 
-// Owner should be the key to a redis db
-// the value should be an object 
-
-// owner: tasks
-
-// when a get request is made
-// we check if the owner exists in redis db
-// if yes, we get the neccesary data from it
-//  else, we get the data from  our db and save it to redis db.
 
 const redisClient = new Redis();
 
