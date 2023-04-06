@@ -7,7 +7,7 @@ const taskModel = require('../models/taskModel');
 // when a get request is made
 // we check if the owner exists in redis db
 // if yes, we get the neccesary data from it
-//  else, we get the data from 
+//  else, we get the data from  our db and save it to redis db.
 
 
 async function addTask(req, res) {
