@@ -55,6 +55,7 @@ async function getTask(req, res) {
         const cachedTask = await redisClient.get(id);
         if (cachedTask) {
             const savedTask = JSON.parse(cachedTask);
+            console.log()
             return res.json(savedTask);
         }
         const task = await taskModel.findOne({ _id: id });
