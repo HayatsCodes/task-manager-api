@@ -85,7 +85,6 @@ async function updateTask(req, res) {
             redisClient.set(id, JSON.stringify(task));
         }
 
-        return res.json(savedTask);
         res.status(200).json({ message: 'Task updated successfully' });
 
     } catch (error) {
@@ -104,7 +103,7 @@ async function deleteTask(req, res) {
 
         const cachedTask = await redisClient.get(id);
         if (cachedTask) {
-            redisClient.set(id, JSON.stringify(task));
+            await redisClient.del(id);
         }
 
         res.status(200).json({ message: 'Task deleted successfully' });
