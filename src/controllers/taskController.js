@@ -36,7 +36,9 @@ async function addTask(req, res) {
 async function getTasks(req, res) {
     try {
         const owner = req.user._id;
-        const cachedOwner = await redis.get(owner)
+        const cachedOwner = await redis.get(owner, (err, results) => {
+            
+        });
         if(cachedOwner) {
             
         }
