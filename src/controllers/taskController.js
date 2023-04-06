@@ -102,7 +102,10 @@ async function deleteTask(req, res) {
             return res.json({ error: 'Task could not be deleted' });
         }
 
-    
+        const cachedTask = await redisClient.get(id);
+        if (cachedTask) {
+            redisClient.set(id, JSON.stringify(task));
+        }
 
         res.status(200).json({ message: 'Task deleted successfully' });
     } catch (error) {
