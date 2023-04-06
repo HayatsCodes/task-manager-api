@@ -36,7 +36,7 @@ async function addTask(req, res) {
 async function getTasks(req, res) {
     try {
         const owner = req.user._id;
-        const cachedOwner = await redis.get(owner, (err, results) => {
+        const cachedTasks = await redis.get(owner, (err, results) => {
             if (!results) {
                 return null;
             }
@@ -44,7 +44,7 @@ async function getTasks(req, res) {
             const tasks = results.getTasks
             return tasks;
         });
-        if(cachedOwner) {
+        if(cachedTasks) {
             
         }
         const tasks = await taskModel.find({'owner': owner});
