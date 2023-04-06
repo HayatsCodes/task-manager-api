@@ -78,8 +78,8 @@ async function updateTask(req, res) {
 
         const cachedTask = await redisClient.get(id);
         if (cachedTask) {
-            
-            redisClient.set(id, JSON.stringify(task));
+        const updatedTask = await taskModel.findOne({ _id: id });
+            redisClient.set(id, JSON.stringify(updateTask));
         }
 
         res.status(200).json({ message: 'Task updated successfully' });
