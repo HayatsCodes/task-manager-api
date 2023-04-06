@@ -4,7 +4,12 @@ const taskModel = require('../models/taskModel');
 
 const redisClient = new Redis();
 
-
+redisClient.monitor(function (err, monitor) {
+    console.log("Entering Redis monitoring mode...");
+    monitor.on("monitor", function (time, args, source, database) {
+        console.log(time + ": " + JSON.stringify(args));
+    });
+});
 
 async function addTask(req, res) {
     try {
