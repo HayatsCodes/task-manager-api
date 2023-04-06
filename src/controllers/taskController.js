@@ -4,6 +4,9 @@ const taskModel = require('../models/taskModel');
 // Owner should be the key to a redis db
 // the value should be an object 
 
+// when a get request is made
+// we check if the ow
+
 
 async function addTask(req, res) {
     try {
