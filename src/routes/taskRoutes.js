@@ -10,6 +10,7 @@ const {
 
 const taskRouter = express.Router();
 
+task
 taskRouter.post('/tasks', authMiddleware, addTask);
 taskRouter.get('/tasks', authMiddleware, getTasks);
 taskRouter.get('/tasks/:id', authMiddleware, getTask);
