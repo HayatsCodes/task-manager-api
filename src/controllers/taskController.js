@@ -1,4 +1,4 @@
-const Redis = require('ioredis');
+const Redis = require("ioredis");
 const taskModel = require('../models/taskModel');
 
 // Owner should be the key to a redis db
@@ -15,7 +15,7 @@ owner: {
 // if yes, we get the neccesary data from it
 //  else, we get the data from  our db and save it to redis db.
 
-const redisClient = new Redis
+const redisClient = new Redis();
 
 
 
@@ -52,7 +52,7 @@ async function getTasks(req, res) {
         if (!tasks) {
             return res.json({ error: 'No task found'});
         }
-        redisClient.set()
+        redisClient.set(own)
         return res.json({ 'tasks': tasks });
     } catch (error) {
         return res.status(400).json({ error });
