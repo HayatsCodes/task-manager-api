@@ -62,6 +62,7 @@ async function getTask(req, res) {
         if (!task) {
             return res.json({ error: 'Task not found' });
         }
+        redisClient.set(id, JSON.stringify(tasks));
         return res.json(task);
 
     } catch (error) {
