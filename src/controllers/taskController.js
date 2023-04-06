@@ -6,7 +6,7 @@ const taskModel = require('../models/taskModel');
 
 owner: {
     getTasks: {tasks}
-    getTask: {id}
+    getTask: {id: task}
 
 }
 
