@@ -4,6 +4,8 @@ const taskModel = require('../models/taskModel');
 // Owner should be the key to a redis db
 // the value should be an object 
 
+
+
 // when a get request is made
 // we check if the owner exists in redis db
 // if yes, we get the neccesary data from it
