@@ -43,7 +43,7 @@ async function getTasks(req, res) {
             results = JSON.parse(results);
             try {
                 const tasks = results.getTasks
-            }
+            } catch(T)
             return tasks;
         });
 
