@@ -9,7 +9,7 @@ const taskModel = require('../models/taskModel');
 // if yes, we get the neccesary data from it
 //  else, we get the data from  our db and save it to redis db.
 
-
+const redis = 
 
 
 async function addTask(req, res) {
@@ -28,7 +28,7 @@ async function addTask(req, res) {
 
 async function getTasks(req, res) {
     try {
-        
+
         const owner = req.user._id;
         const tasks = await taskModel.find({'owner': owner});
         if (!tasks) {
