@@ -79,6 +79,12 @@ async function updateTask(req, res) {
             return res.status(400).json({ error: 'Task not found' });
         }
 
+        const cachedTask = await redisClient.get(id);
+        if (cachedTask) {
+            const savedTask = JSON.parse(cachedTask);
+            return res.json(savedTask);
+        }
+
         res.status(200).json({ message: 'Task updated successfully' });
 
     } catch (error) {
