@@ -42,7 +42,7 @@ async function getTasks(req, res) {
             }
             results = JSON.parse(results);
             const tasks = results.getTasks
-            return tasks
+            return tasks;
         });
         if(cachedOwner) {
             
