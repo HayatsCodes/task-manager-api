@@ -25,6 +25,5 @@ jobs:
         services:
           redis:
             image: redis
-
       - name: Run tests
         run: npm test
