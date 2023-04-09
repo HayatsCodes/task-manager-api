@@ -8,6 +8,10 @@
     "watch": "nodemon src/server",
     "test": "jest --detectOpenHandles"
   },
+
+  "jest": {
+    "testTimeout": 10000
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HayatsCodes/task-manager-api.git"
