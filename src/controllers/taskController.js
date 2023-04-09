@@ -15,7 +15,7 @@ async function addTask(req, res) {
 
         res.status(201).json({ 'task': task });
     } catch (error) {
-        return res.status(400).json({ error });
+        return res.status(400).json({ error: error.stack });
     }
 }
 
@@ -35,7 +35,7 @@ async function getTasks(req, res) {
         redisClient.set(owner, JSON.stringify(tasks));
         return res.json({ 'tasks': tasks });
     } catch (error) {
-        return res.status(400).json({ error });
+        return res.status(400).json({ error: error.stack });
     }
 }
 
