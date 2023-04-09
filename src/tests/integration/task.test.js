@@ -41,6 +41,8 @@ describe('Task endpoints', () => {
     afterAll(async () => {
         mongoose.disconnect();
         mongo.stop();
+        await redisClient.quit();
+
     });
 
     describe('POST /tasks', () => {
