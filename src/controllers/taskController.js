@@ -78,7 +78,7 @@ async function updateTask(req, res) {
         res.status(200).json({ message: 'Task updated successfully' });
 
     } catch (error) {
-        return res.status(400).json({ error });
+        return res.status(400).json({ error: error.stack });
     }
 }
 
@@ -98,7 +98,7 @@ async function deleteTask(req, res) {
 
         res.status(200).json({ message: 'Task deleted successfully' });
     } catch (error) {
-        return res.status(400).json({ error });
+        return res.status(400).json({ error: error.stack });
     }
 }
 
