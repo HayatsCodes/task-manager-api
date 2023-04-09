@@ -21,6 +21,7 @@ jobs:
             node-version: ${{ matrix.node-version }}
       - name: Install necessary dependencies
         run: npm install
-      
+      - name: Setup redis database
+      - uses: getong/redis-action@v1
       - name: Run tests
         run: npm test
