@@ -8,7 +8,7 @@ jobs:
   test:
     env:
       SECRET_KEY: KGGL>HKHVHKWKBKJKJLMNOPKFGHN@$MGTH
-      
+      JWT_EXPIRE: 1d
     strategy:
       matrix:
         node-version: [18.x]
