@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const request = require('supertest');
+const Redis = require('ioredis');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 require('dotenv').config();
 const app = require('../../app');
