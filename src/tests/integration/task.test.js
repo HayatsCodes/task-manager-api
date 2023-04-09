@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = require('../../app');
 
 describe('Task endpoints', () => {
-    
+    let redisClient;
     let mongo;
     let owner;
     let cookie;
