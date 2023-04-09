@@ -44,10 +44,11 @@ describe('Task endpoints', () => {
     afterAll(async () => {
         mongoose.disconnect();
         mongo.stop();
-        await redisClient.disconnect();
-        while (redisClient.status === "connected") {
-            await new Promise(r => setTimeout(r, 180000));
-          }
+        const ok = await redis.quit();
+    if (ok === 'OK') {
+      console.log('Redis connection closed');
+    }
+  }, 180000);
     });
 
     describe('POST /tasks', () => {
