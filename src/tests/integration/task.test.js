@@ -12,6 +12,7 @@ describe('Task endpoints', () => {
     let id;
 
     beforeAll( async () => {
+        redisClient = new Redis();
         mongo = await MongoMemoryServer.create();
         const uri = mongo.getUri();
 
