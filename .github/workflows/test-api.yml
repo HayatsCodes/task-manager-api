@@ -1,5 +1,4 @@
 name: Test API
-
 on:
   push:
     branches: [ main ]
@@ -7,10 +6,12 @@ on:
     branches: [ main ]
 jobs:
   test:
-    runs-on: ubuntu-latest
+    env:
+      
     strategy:
       matrix:
         node-version: [18.x]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Use node version ${{ matrix.node-version }}
