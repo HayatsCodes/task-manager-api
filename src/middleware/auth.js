@@ -23,7 +23,9 @@ async function authMiddleware (req, res, next) {
         next();
         
     } catch (error) {
-        err instanceof jwt.JsonWebTokenError
+        if (error instanceof jwt.JsonWebTokenError || error instanceof jwt.NotBeforeError || ) {
+
+        }
         return res.status(400).json({ error });
     }
 }
