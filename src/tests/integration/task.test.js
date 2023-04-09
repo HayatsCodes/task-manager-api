@@ -148,7 +148,7 @@ describe('Task endpoints', () => {
     })
 
 
-});
+}, );
 
 // @Todo:
 //  1. Test POST /tasks 
