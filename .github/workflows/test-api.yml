@@ -8,6 +8,7 @@ jobs:
   test:
     env:
       SECRET_KEY: KGGL>HKHVHKWKBKJKJLMNOPKFGHN@$MGTH
+      
     strategy:
       matrix:
         node-version: [18.x]
