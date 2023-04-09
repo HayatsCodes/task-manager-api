@@ -9,10 +9,17 @@ jobs:
     env:
       SECRET_KEY: KGGL>HKHVHKWKBKJKJLMNOPKFGHN@$MGTH
       JWT_EXPIRE: 1d
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
     strategy:
       matrix:
         node-version: [18.x]
     runs-on: ubuntu-latest
+    services:
+      redis:
+        image: redis
+        ports:
+          - 6379:6379
     steps:
       - uses: actions/checkout@v2
       - name: Use node version ${{ matrix.node-version }}
@@ -21,7 +28,6 @@ jobs:
             node-version: ${{ matrix.node-version }}
       - name: Install necessary dependencies
         run: npm install
-      - name: Setup redis database
-        uses: getong/redis-action@v1
+
       - name: Run tests
         run: npm test
