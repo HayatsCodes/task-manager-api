@@ -71,8 +71,8 @@ describe('Task endpoints', () => {
             .set('Cookie', fakeCookie)
             .expect('Content-Type', /json/)
             .expect(400);
-            console.log('res.body: ', res.body);
-            // expect(res.body.message).toBe('Authentication failed');
+            // console.log('res.body: ', res.body);
+            expect(res.body.message).toBe('Authentication failed');
         });
 
         it('should not add a task for users that are not logged in', async () => {
