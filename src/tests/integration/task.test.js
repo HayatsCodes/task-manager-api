@@ -44,7 +44,7 @@ describe('Task endpoints', () => {
     afterAll(async () => {
         mongoose.disconnect();
         mongo.stop();
-        const ok = await redis.quit();
+        const ok = await redisClient.quit();
         if (ok === 'OK') {
             console.log('Redis connection closed');
         }
