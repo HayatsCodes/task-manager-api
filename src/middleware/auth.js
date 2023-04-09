@@ -13,7 +13,7 @@ async function authMiddleware (req, res, next) {
         const user = await userModel.findOne({ _id: decoded.id, 'token': token});
         
         if(!user) {
-            
+            console.log('auth failed');
             return res.status(400).json({ message: 'Authentication failed' });
         }
 
