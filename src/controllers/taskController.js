@@ -4,6 +4,7 @@ const taskModel = require('../models/taskModel');
 
 const redisClient = new Redis();
 
+
 async function addTask(req, res) {
     try {
         const task = new taskModel({
@@ -55,8 +56,7 @@ async function getTask(req, res) {
         return res.json(task);
 
     } catch (error) {
-        console.log('Error occurred at line: ', error.stack);
-        return res.status(400).json({ error });
+        return res.status(400).json({ error: error.stack });
     }
 }
 
